@@ -14,12 +14,12 @@ st.set_page_config(
     layout="wide",
 )
 
-# ── Sidebar: Truth Protocol (shown always; populates on click) ─────────────────
+# ── Sidebar: Due Diligence (shown always; populates on click) ─────────────────
 with st.sidebar:
-    st.title("🛡️ Truth Protocol")
+    st.title("🛡️ Due Diligence")
     st.caption(
         "Click any project marker on the map to evaluate it against the "
-        "Truth Protocol checklist for Free, Prior, and Informed Consent (FPIC) "
+        "Due Diligence checklist for Free, Prior, and Informed Consent (FPIC) "
         "and environmental justice standards."
     )
     st.markdown("---")
@@ -95,7 +95,7 @@ with st.sidebar:
             unsafe_allow_html=True,
         )
     else:
-        st.info("← Click a project marker on the map to begin the Truth Protocol evaluation.")
+        st.info("← Click a project marker on the map to begin the Due Diligence evaluation.")
 
 # ── Main page ─────────────────────────────────────────────────────────────────
 st.title("🛡️ GreenWatch – Energy Project Threats to Tribal Lands")
@@ -103,7 +103,7 @@ st.markdown(
     "**Blue markers** = Hydrogen projects &nbsp;|&nbsp; "
     "**Orange markers** = Waste-to-Energy projects &nbsp;|&nbsp; "
     "**Blue shading** = Federally recognized Indian Reservation boundaries. "
-    "Click a marker to open the Truth Protocol checklist in the sidebar."
+    "Click a marker to open the Due Diligence checklist in the sidebar."
 )
 
 # ── Load all_threats.csv ───────────────────────────────────────────────────────

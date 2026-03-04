@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GreenWatch – Threats to Tribal Lands</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <!-- PapaParse (CSV parser) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+
+  <style>
+    /* ── Reset & base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f0f2f6;
+      color: #111;
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* ── Sidebar ── */
+    #sidebar {
+      width: 320px;
+      min-width: 280px;
+      background: #fff;
+      border-right: 1px solid #dde;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      padding: 18px 16px 24px;
+      flex-shrink: 0;
+    }
+    #sidebar h1.sidebar-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .sidebar-caption {
+      font-size: 0.8rem;
+      color: #555;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+    hr.divider { border: none; border-top: 1px solid #dde; margin: 12px 0; }
+
+    /* Filters */
+    .filter-section h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 8px; }
+    .filter-section label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+      font-size: 0.88rem;
+      cursor: pointer;
+    }
+    .filter-section input[type="checkbox"] { width: 15px; height: 15px; cursor: pointer; }
+
+    /* Alert / success banner */
+    .alert-box {
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-size: 0.85rem;
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+    .alert-box.danger  { background: #ffe0e0; border-left: 4px solid #cc0000; color: #700; }
+    .alert-box.success { background: #e0ffe4; border-left: 4px solid #2d7a3a; color: #184d1e; }
+
+    #project-detail h3 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
+    #project-detail .proj-meta { font-size: 0.85rem; margin-bottom: 4px; color: #333; }
+    #project-detail h4 { font-size: 0.9rem; font-weight: 600; margin: 10px 0 6px; }
+
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 8px;
+      font-size: 0.82rem;
+      line-height: 1.3;
+      cursor: pointer;
+    }
+    .checklist-item input[type="checkbox"] { margin-top: 2px; flex-shrink: 0; }
+
+    #score-bar {
+      border-radius: 6px;
+      padding: 7px 12px;
+      text-align: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-top: 10px;
+    }
+
+    .placeholder-info {
+      background: #e8f0fe;
+      border-left: 4px solid #3366cc;
+      border-radius: 6px;
+      padding: 10px 12px;
+      font-size: 0.85rem;
+      color: #1a3a8f;
+      line-height: 1.4;
+    }
+
+    /* ── Main content ── */
+    #main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    #main-header {
+      padding: 16px 20px 10px;
+      background: #fff;
+      border-bottom: 1px solid #dde;
+      flex-shrink: 0;
+    }
+    #main-header h1 { font-size: 1.4rem; font-weight: 700; }
+    #main-header p  { font-size: 0.85rem; color: #444; margin-top: 4px; }
+
+    /* Metrics row */
+    #metrics {
+      display: flex;
+      gap: 14px;
+      padding: 12px 20px 0;
+      flex-shrink: 0;
+    }
+    .metric-card {
+      background: #fff;
+      border-radius: 8px;
+      border: 1px solid #dde;
+      padding: 12px 18px;
+      flex: 1;
+      text-align: center;
+    }
+    .metric-card .metric-label { font-size: 0.78rem; color: #666; text-transform: uppercase; letter-spacing: .5px; }
+    .metric-card .metric-value { font-size: 1.8rem; font-weight: 700; color: #111; }
+    .metric-card .metric-value.alert-val { color: #cc0000; }
+
+    /* Map */
+    #map {
+      flex: 1;
+      margin: 10px 20px 10px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid #ccc;
+      min-height: 0;
+    }
+
+    /* Scroll area below map */
+    #below-map {
+      padding: 0 20px 16px;
+      overflow-y: auto;
+      flex-shrink: 0;
+      max-height: 280px;
+    }
+
+    /* Alert expander */
+    .expander {
+      border: 1px solid #dde;
+      border-radius: 8px;
+      background: #fff;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+    .expander summary {
+      padding: 10px 14px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      background: #fff8f8;
+      color: #700;
+      list-style: none;
+    }
+    .expander summary::-webkit-details-marker { display: none; }
+    .expander summary::before { content: "▶ "; font-size: 0.75rem; }
+    .expander[open] summary::before { content: "▼ "; }
+
+    /* Data table */
+    #table-section { margin-bottom: 16px; }
+    #table-section h3 { font-size: 1rem; font-weight: 600; margin-bottom: 8px; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.8rem;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #dde;
+    }
+    th {
+      background: #f0f2f6;
+      padding: 7px 10px;
+      text-align: left;
+      font-weight: 600;
+      border-bottom: 1px solid #ccc;
+      position: sticky;
+      top: 0;
+    }
+    td { padding: 6px 10px; border-bottom: 1px solid #eee; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: #f5f7ff; }
+    .alert-row td { background: #fff5f5 !important; }
+
+    /* Legend */
+    .map-legend {
+      background: #fff;
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 13px;
+      line-height: 1.9;
+      color: #111;
+      box-shadow: 0 2px 6px rgba(0,0,0,.12);
+    }
+    .map-legend b { display: block; margin-bottom: 2px; }
+
+    /* Responsive sidebar toggle */
+    @media (max-width: 700px) {
+      #sidebar { width: 100%; height: auto; border-right: none; border-bottom: 1px solid #dde; }
+      body { flex-direction: column; overflow: auto; }
+      #main { overflow: visible; }
+      #map { height: 400px; flex: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════ SIDEBAR ═══════════════════════════ -->
+<aside id="sidebar">
+  <h1 class="sidebar-title">🛡️ Truth Protocol</h1>
+  <p class="sidebar-caption">
+    Click any project marker on the map to evaluate it against the
+    Truth Protocol checklist for Free, Prior, and Informed Consent (FPIC)
+    and environmental justice standards.
+  </p>
+  <hr class="divider" />
+
+  <!-- Filters -->
+  <div class="filter-section">
+    <h3>Project Filters</h3>
+    <label><input type="checkbox" id="filter-hydrogen" checked /> Hydrogen</label>
+    <label><input type="checkbox" id="filter-wte" checked /> Waste-to-Energy</label>
+    <label style="margin-top:8px;">
+      <input type="checkbox" id="filter-tribal-only" />
+      Show only projects within 50 miles of Tribal land
+    </label>
+  </div>
+  <hr class="divider" />
+
+  <!-- Project detail / checklist -->
+  <div id="project-detail">
+    <div class="placeholder-info">
+      ← Click a project marker on the map to begin the Truth Protocol evaluation.
+    </div>
+  </div>
+</aside>
+
+<!-- ═══════════════════════════ MAIN ══════════════════════════════ -->
+<main id="main">
+  <div id="main-header">
+    <h1>🛡️ GreenWatch – Energy Project Threats to Tribal Lands</h1>
+    <p>
+      <strong>Blue markers</strong> = Hydrogen projects &nbsp;|&nbsp;
+      <strong>Orange markers</strong> = Waste-to-Energy projects &nbsp;|&nbsp;
+      <strong>Blue shading</strong> = Federally recognized Indian Reservation boundaries.
+      Click a marker to open the Truth Protocol checklist in the sidebar.
+    </p>
+  </div>
+
+  <!-- Metrics -->
+  <div id="metrics">
+    <div class="metric-card">
+      <div class="metric-label">Total Projects</div>
+      <div class="metric-value" id="m-total">–</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Hydrogen</div>
+      <div class="metric-value" id="m-hydrogen">–</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Waste-to-Energy</div>
+      <div class="metric-value" id="m-wte">–</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">🚨 Near Tribal Land</div>
+      <div class="metric-value alert-val" id="m-alert">–</div>
+    </div>
+  </div>
+
+  <!-- Map -->
+  <div id="map"></div>
+
+  <!-- Below-map scroll area -->
+  <div id="below-map">
+    <!-- Alert expander -->
+    <details class="expander" id="alert-expander" style="display:none">
+      <summary id="alert-expander-label">🚨 Projects within 50 miles of a Tribal boundary</summary>
+      <div style="padding:10px">
+        <table id="alert-table">
+          <thead>
+            <tr>
+              <th>Project Name</th><th>Developer</th><th>Technology</th><th>Nearest Tribe</th>
+            </tr>
+          </thead>
+          <tbody id="alert-tbody"></tbody>
+        </table>
+      </div>
+    </details>
+
+    <!-- All projects table -->
+    <div id="table-section">
+      <hr style="border:none;border-top:1px solid #dde;margin:4px 0 10px" />
+      <h3>All Projects</h3>
+      <table id="main-table">
+        <thead id="main-thead"></thead>
+        <tbody id="main-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+</main>
+
+<!-- ═══════════════════════════ SCRIPT ════════════════════════════ -->
+<script>
+// ── State ────────────────────────────────────────────────────────────────────
+let allRows = [];        // full dataset from all_threats.csv
+let leafletMap = null;
+let markerLayerGroup = null;
+
+// ── Initialise Leaflet map ───────────────────────────────────────────────────
+function initMap() {
+  leafletMap = L.map("map", {
+    center: [39.5, -98.35],
+    zoom: 4,
+  });
+
+  L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
+    attribution: '&copy; <a href="https://carto.com/">CARTO</a>',
+    subdomains: "abcd",
+    maxZoom: 19,
+  }).addTo(leafletMap);
+
+  markerLayerGroup = L.layerGroup().addTo(leafletMap);
+
+  // Legend
+  const legend = L.control({ position: "bottomright" });
+  legend.onAdd = () => {
+    const div = L.DomUtil.create("div", "map-legend");
+    div.innerHTML = `
+      <b>Project Type</b>
+      <span style="color:#1565C0;font-size:18px">●</span> Hydrogen<br>
+      <span style="color:#E65100;font-size:18px">●</span> Waste-to-Energy<br>
+      <span style="color:#cc0000;font-size:18px">◎</span> Within 50 mi of Tribal land
+    `;
+    return div;
+  };
+  legend.addTo(leafletMap);
+}
+
+// ── Load Tribal GeoJSON ──────────────────────────────────────────────────────
+async function loadTribalBoundaries() {
+  try {
+    const resp = await fetch("tribal_boundaries_simple.geojson");
+    if (!resp.ok) return;
+    const geojson = await resp.json();
+    L.geoJSON(geojson, {
+      style: {
+        fillColor: "#4169E1",
+        color: "#1a3a8f",
+        weight: 1.5,
+        fillOpacity: 0.25,
+      },
+      onEachFeature: (feature, layer) => {
+        if (feature.properties && feature.properties.NAME) {
+          layer.bindTooltip(`Tribal Area: ${feature.properties.NAME}`, { sticky: true });
+        }
+      },
+    }).addTo(leafletMap);
+  } catch (e) {
+    console.warn("Could not load tribal boundaries:", e);
+  }
+}
+
+// ── Marker colour helper ─────────────────────────────────────────────────────
+function markerColor(technology) {
+  return /hydrogen/i.test(technology || "") ? "#1565C0" : "#E65100";
+}
+
+// ── Render markers based on current filter state ─────────────────────────────
+function renderMarkers() {
+  markerLayerGroup.clearLayers();
+
+  const showH2  = document.getElementById("filter-hydrogen").checked;
+  const showWTE = document.getElementById("filter-wte").checked;
+  const tribalOnly = document.getElementById("filter-tribal-only").checked;
+
+  const filtered = allRows.filter(r => {
+    const tech = (r.Technology || "").toLowerCase();
+    const isH2  = tech.includes("hydrogen");
+    const isWTE = /waste|landfill/.test(tech);
+    if (!showH2 && isH2)  return false;
+    if (!showWTE && isWTE) return false;
+    if (tribalOnly && !parseBool(r.Near_Tribal_Land)) return false;
+    return true;
+  });
+
+  filtered.forEach(row => {
+    const lat = parseFloat(row.Latitude);
+    const lon = parseFloat(row.Longitude);
+    if (isNaN(lat) || isNaN(lon)) return;
+
+    const isAlert = parseBool(row.Near_Tribal_Land);
+    const color   = markerColor(row.Technology);
+    const tribe   = row.Nearest_Tribe || "";
+
+    // Red alert ring
+    if (isAlert) {
+      L.circleMarker([lat, lon], {
+        radius: 9,
+        color: "#cc0000",
+        weight: 2,
+        fillOpacity: 0,
+      }).addTo(markerLayerGroup);
+    }
+
+    const tip = `${row.Project_Name} | ${row.Technology}`;
+    const popupHtml = `
+      <b>${row.Project_Name}</b><br>
+      Developer: ${row.Developer || "N/A"}<br>
+      Technology: ${row.Technology || "N/A"}<br>
+      ${isAlert ? `<span style="color:red"><b>🚨 Within 50 mi of: ${tribe}</b></span>` : ""}
+    `;
+
+    const marker = L.circleMarker([lat, lon], {
+      radius: 6,
+      color: color,
+      fillColor: color,
+      fillOpacity: 0.9,
+      weight: 1.5,
+    })
+      .bindPopup(popupHtml, { maxWidth: 300 })
+      .bindTooltip(tip, { sticky: true })
+      .on("click", () => showProjectDetail(row));
+
+    marker.addTo(markerLayerGroup);
+  });
+
+  renderTables(filtered);
+}
+
+// ── Sidebar: show selected project + Truth Protocol checklist ────────────────
+const CHECKLIST = [
+  ["FPIC_Obtained",           "Was Free, Prior, and Informed Consent obtained from the affected Tribe(s)?"],
+  ["Tribal_Consultation",     "Has formal government-to-government consultation taken place?"],
+  ["Treaty_Rights_Review",    "Have treaty rights and ceded territory obligations been assessed?"],
+  ["Tribal_EIA",              "Has a Tribal Environmental Impact Assessment (TEIA) been conducted?"],
+  ["Water_Rights",            "Have potential impacts on Tribal water rights been evaluated?"],
+  ["Cultural_Resources",      "Have sacred sites and cultural resources been identified and protected?"],
+  ["Economic_Benefit",        "Does the project include revenue-sharing or direct economic benefit to the Tribe?"],
+  ["Tribal_Labor",            "Is there a Tribal hiring or workforce preference agreement?"],
+  ["Monitoring_Rights",       "Does the Tribe have independent monitoring and enforcement rights?"],
+  ["Exit_Remediation_Plan",   "Is there a decommissioning and land-remediation plan agreed to by the Tribe?"],
+];
+
+function showProjectDetail(row) {
+  const isAlert = parseBool(row.Near_Tribal_Land);
+  const tribe   = row.Nearest_Tribe || "a Tribal boundary";
+
+  const bannerHtml = isAlert
+    ? `<div class="alert-box danger">🚨 Within 50 miles of: <strong>${tribe}</strong></div>`
+    : `<div class="alert-box success">✓ Not within 50-mile Tribal buffer zone</div>`;
+
+  const checklistHtml = CHECKLIST.map(([key, question]) => `
+    <label class="checklist-item">
+      <input type="checkbox" id="chk_${key}" />
+      ${question}
+    </label>
+  `).join("");
+
+  document.getElementById("project-detail").innerHTML = `
+    ${bannerHtml}
+    <h3>${row.Project_Name || "Unknown Project"}</h3>
+    <p class="proj-meta"><strong>Developer:</strong> ${row.Developer || "N/A"}</p>
+    <p class="proj-meta"><strong>Technology:</strong> ${row.Technology || "N/A"}</p>
+    <hr class="divider" />
+    <h4>☑ Checklist</h4>
+    ${checklistHtml}
+    <hr class="divider" />
+    <div id="score-summary"><strong>Compliance Score: 0/${CHECKLIST.length} (0%)</strong></div>
+    <div id="score-bar" style="background:#cc0000;border-radius:6px;padding:7px 12px;
+         text-align:center;color:#fff;font-weight:700;font-size:.9rem;margin-top:8px;">
+      ✗ Insufficient
+    </div>
+  `;
+
+  // Bind live score update to each checkbox
+  CHECKLIST.forEach(([key]) => {
+    document.getElementById(`chk_${key}`)
+      .addEventListener("change", updateScore);
+  });
+}
+
+function updateScore() {
+  const answered = CHECKLIST.filter(([key]) =>
+    document.getElementById(`chk_${key}`)?.checked
+  ).length;
+  const total = CHECKLIST.length;
+  const pct   = Math.round(answered / total * 100);
+
+  document.getElementById("score-summary").innerHTML =
+    `<strong>Compliance Score: ${answered}/${total} (${pct}%)</strong>`;
+
+  const bar   = document.getElementById("score-bar");
+  const color = pct >= 70 ? "green" : pct >= 40 ? "orange" : "#cc0000";
+  const label = pct >= 70 ? "✓ Adequate" : pct >= 40 ? "⚠ Partial" : "✗ Insufficient";
+  bar.style.background = color;
+  bar.textContent = label;
+}
+
+// ── Tables ───────────────────────────────────────────────────────────────────
+const COLS = ["Project_Name", "Developer", "Technology", "Nearest_Tribe", "Near_Tribal_Land"];
+const COL_LABELS = {
+  Project_Name: "Project Name",
+  Developer: "Developer",
+  Technology: "Technology",
+  Nearest_Tribe: "Nearest Tribe",
+  Near_Tribal_Land: "Near Tribal Land",
+};
+
+function renderTables(filtered) {
+  // ── Main table (filtered) ──
+  const thead = document.getElementById("main-thead");
+  thead.innerHTML = "<tr>" + COLS.map(c => `<th>${COL_LABELS[c]}</th>`).join("") + "</tr>";
+
+  const tbody = document.getElementById("main-tbody");
+  tbody.innerHTML = filtered.map(r => {
+    const cls = parseBool(r.Near_Tribal_Land) ? " class='alert-row'" : "";
+    return `<tr${cls}>${COLS.map(c => `<td>${r[c] ?? ""}</td>`).join("")}</tr>`;
+  }).join("");
+
+  // ── Alert table (always from full dataset) ──
+  const alertRows = allRows.filter(r => parseBool(r.Near_Tribal_Land));
+  const alertExpander = document.getElementById("alert-expander");
+  if (alertRows.length) {
+    alertExpander.style.display = "";
+    document.getElementById("alert-expander-label").textContent =
+      `🚨 ${alertRows.length} projects within 50 miles of a Tribal boundary`;
+    document.getElementById("alert-tbody").innerHTML = alertRows.map(r => `
+      <tr>
+        <td>${r.Project_Name ?? ""}</td>
+        <td>${r.Developer ?? ""}</td>
+        <td>${r.Technology ?? ""}</td>
+        <td>${r.Nearest_Tribe ?? ""}</td>
+      </tr>
+    `).join("");
+  } else {
+    alertExpander.style.display = "none";
+  }
+}
+
+// ── Metrics ──────────────────────────────────────────────────────────────────
+function renderMetrics() {
+  const total   = allRows.length;
+  const h2      = allRows.filter(r => /hydrogen/i.test(r.Technology || "")).length;
+  const wte     = allRows.filter(r => /waste|landfill/i.test(r.Technology || "")).length;
+  const alerts  = allRows.filter(r => parseBool(r.Near_Tribal_Land)).length;
+
+  document.getElementById("m-total").textContent   = total;
+  document.getElementById("m-hydrogen").textContent = h2;
+  document.getElementById("m-wte").textContent      = wte;
+  document.getElementById("m-alert").textContent    = alerts;
+}
+
+// ── Utility ──────────────────────────────────────────────────────────────────
+function parseBool(val) {
+  if (typeof val === "boolean") return val;
+  const s = String(val).trim().toLowerCase();
+  return s === "true" || s === "1" || s === "yes";
+}
+
+// ── Bootstrap ────────────────────────────────────────────────────────────────
+async function bootstrap() {
+  initMap();
+  await loadTribalBoundaries();
+
+  Papa.parse("all_threats.csv", {
+    download: true,
+    header: true,
+    skipEmptyLines: true,
+    complete({ data }) {
+      allRows = data;
+      renderMetrics();
+      renderMarkers();
+    },
+    error(err) {
+      alert("Could not load all_threats.csv. Run build_all_threats.py first.\n\n" + err.message);
+    },
+  });
+
+  // Filter change listeners
+  ["filter-hydrogen", "filter-wte", "filter-tribal-only"].forEach(id =>
+    document.getElementById(id).addEventListener("change", renderMarkers)
+  );
+}
+
+bootstrap();
+</script>
+</body>
+</html>

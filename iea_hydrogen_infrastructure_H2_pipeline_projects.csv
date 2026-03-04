@@ -1,0 +1,262 @@
+Ref,Project name,Country1,Country2,Country3,Country4,Country5,Country6,Partners,Date online,Decomission date,Repurposed_new,Status,Product,Pipeline_type,Announced Size,Capacity_MWel,Capacity_nm³ H₂/h,Capacity_kt H2/y,Length_km,New_km,Repurposed_km,Pressure_bar,Costs_MUSD,Link_1,Link 2,Link 3,Link 4
+PiP-1,HyNetwork Rotterdam,NLD,,,,,,"Gasunie/Hynetwork, Port of Rotterdam",2026,,New,Under construction,H2,Onshore,24 inches,,,,32 km,32.0,,,EUR 100 million,Link,Link,,
+PiP-2,Holland Hydrogen 1,NLD,,,,,,"Shell, Gasunie",2025,,New,Under construction,H2,Onshore,"200 MW electrolyser, 12-hour of storage",,,,14 km,14.0,,,,Link,Link,Link,
+PiP-3,H2 pipeline Dow-Yara,NLD,,,,,,"Dow Benelux, Yara, ICL-IP, Gasunie",2018,,Repurposed,Operational,H2,Onshore,4kt H2/year,,,,12 km,,12,,,Link,Link,Link,
+PiP-4,Northern Netherlands Cluster-RIB Noord,NLD,,,,,,Gasunie,2030,,Repurposed & New,Removed ,H2,Onshore,"Existing: >36 inches (10-15 GW H2)
+New: TBC",,,,"Repurposed: 140 km
+New: 31 km",31.0,140,,"Repurposed: EURO 89 mill
+New: 79 mill",Link,Link,Link,Link
+PiP-5,Rotterdam/Moerdijk cluster,NLD,,,,,,Gasunie,2026,,New,Removed ,H2,Onshore, TBC,,,,75 km,75.0,,,EURO 270 mill,Link,Link,Link,Link
+PiP-6,NSCA cluster-RIB Amsterdam,NLD,,,,,,Gasunie,2030,,Repurposed & New,Removed ,H2,Onshore,"Existing: >36 inches (10-15 GW H2)
+New: TBC",,,,"Repurposed: 15 km
+New: 15 km",15.0,15,,"Repurposed: EURO 16 mill
+New: 53 mill",Link,Link,Link,Link
+PiP-7,Zealand cluster - Hydrogen Delta Network NL,NLD,,,,,,Gasunie,2030,,New,Removed ,H2,Onshore,TBC,,,,34 km,34.0,0,,EURO 100 mill,Link,Link,Link,Link
+PiP-8,Chemelot cluster,NLD,,,,,,Gasunie,2030,,Repurposed,Removed ,H2,Onshore," >36 inches (10-15 GW H2)
+",,,,25 km,0.0,25,,EURO 19 mill,Link,Link,Link,Link
+PiP-9,Northern Netherlands - NSCA connection,NLD,,,,,,Gasunie,2033,,Repurposed & New,Removed ,H2,Onshore,"Existing: >36 inches (10-15 GW H2)
+New: TBC",,,,"Repurposed: 175 km
+New: 31 km (total length 206 km)",31.0,175,,"Repurposed: EURO 161 mill
+New: EURO 115 mill",Link,Link,Link,Link
+PiP-10,NSCA - Rotterdam/Moerdijk connection,NLD,,,,,,Gasunie,2033,,Repurposed,Removed ,H2,Onshore," >36 inches (10-15 GW H2)
+",,,,79 km,,79,,EURO 99 mill,Link,Link,Link,Link
+PiP-11,Rotterdam/Moerdijk - Zeeland connection,NLD,,,,,,Gasunie,2033,,Repurposed,Removed ,H2,Onshore," >36 inches (10-15 GW H2)
+",,,,83 km,,83,,EURO 71 mill,Link,Link,Link,Link
+PiP-12,Northern Netherlands - Chemelot connection,NLD,,,,,,Gasunie,2033,,Repurposed & New,Removed ,H2,Onshore,"Existing: >36 inches (10-15 GW H2)
+New: TBC",,,,"Repurposed: 200 km
+New: 16 km",16.0,200,,"Repurposed: EURO 156 mill
+New: 50 mill",Link,Link,Link,Link
+PiP-13,Zeeland-Chemelot connection (Ravenstein-Ossendrecht),NLD,,,,,,Gasunie,2033,,Repurposed,Removed ,H2,Onshore," >36 inches (10-15 GW H2)
+",,,,122 km,,122,,EURO 112 mill,Link,Link,Link,Link
+PiP-14,Hydrogen Backbone NLD-Germany,NLD,DEU,,,,,Gasunie,2033,,Repurposed,Removed ,H2,Onshore," >36 inches (10-15 GW H2)
+",,,,134 km,,134,,EURO 138 mill,Link,Link,Link,Link
+PiP-15,Hydrogen backbone NLD-Belgium,NLD,BEL,,,,,"Gasunie, Fluxys",2033,,Repurposed & New,Removed ,H2,Onshore,,,,,8 km,,8,,EURO 12 mil,Link,Link,Link,Link
+PiP-16,H2Med BarMar,ESP,FRA,,,,,"Enagás Infraestructuras de Hidrógeno, GRTgaz, Teréga, OGE",2030,,New,FEED,H2,Offshore,2 Mtpa (DN: 700-1050 mm),,,2000.0,455 km,455.0,,210.0,"EUR 2,135 million",Link,Link2,Link,Link
+PiP-17,H2 Cel-Za (part of H2Med) - Portuguese section,PRT,,,,,,"Enagás, REN",2030,,New,Feasibility study,H2,Onshore,0.75 Mtpa (28 inches),,,750.0,162 km,162.0,,84.0,EUR 350 million,Link,Link2,Link,Link
+PiP-18,H2 Cel-Za  (part of H2Med) - Spanish section,ESP,,,,,,Enagás Infraestructuras de Hidrógeno,2030,,New,FEED,H2,Onshore,0.75 Mtpa (28 inches),,,,86 km ,86.0,,84.0,EUR 350 million (Spanish and Portuguese sections),Link,Link ,,
+PiP-19,"Spanish Hydrogen Backbone:Axis 1(Cantabrian Coast, Valle del Ebro and Levante)",ESP,,,,,,Enagás Infraestructuras de Hidrógeno,2030,,Repurposed & New,FEED,H2,Onshore,3 Mt/year,,,,1500 km,1200.0,300.0,,EUR 3500 million (Axis 1 and  Axis 2),Link,Link2,Link,Link
+PiP-20,"Spanish Hydrogen Backbone: Axis 2 (Via de la Plata axis, Puertollano and Coruña-Zamora connections)",ESP,,,,,,Enagás Infraestructuras de Hidrógeno,2030,,Repurposed & New,FEED,H2,Onshore,0.9 Mt/year,,,,1050 km (PCI) ,800.0,250.0,,EUR 3500 million (Axis 1 and  Axis 2),Link,Link,Link,Link
+PiP-21,Portuguese Hydrogen Backbone: Cantanhede-Figueira da Foz,PRT,,,,,,"REN, Gasodutos ",2029,,New,Feasibility study,H2,Onshore,81 GWh/day,,,,50 km,50.0,0.0,,EUR 210 million (including the link to Monforte),Link,Link,Link,Link
+PiP-22,Portuguese Hydrogen Backbone: Cantanhede-Mangualde-Celorico-Monforte,PRT,,,,,,"REN, Gasodutos ",2029,,Repurposed,Feasibility study,H2,Onshore,81 GWh/day,,,,341  km,,341.0,,EUR 210 million (including the link to Figueira da Foz),Link,Link,Link,Link
+PiP-23,HyFen,FRA,,,,,,NaTran,2029,,Repurposed & New,FEED,H2,Onshore,2 Mt/year,,,,856 km,576.0,280.0,,EUR 4 billion,Link,Link,,
+PiP-24,HySoW (Hydrogen South West corridor of France),FRA,,,,,,Teréga,2030,,Repurposed & New,Feasibility study,H2,Onshore,"13,5 TWh/year",,,406.0,650 km (30% repurposed),455.0,195.0,80 (max),EUR 1214 million,Link,Link,Link,
+PiP-25,Hynframed,FRA,,,,,,NaTran,2029,,New,FEED,H2,Onshore,25 GWh/day,,,,50 km,50.0,,67.7,EUR  104 million,Link,Link,,
+PiP-26,Flow-making hydrogen happen (East) - 2025,DEU,,,,,,GASCADE,2025,,Repurposed,Under construction,H2,Onshore,DN 1400,,,,112.3 km,,112.3,,"EUR 129,3 million  ",Link,,,
+PiP-27,Flow-making hydrogen happen (East)- 2025,DEU,,,,,,GASCADE,2025,,Repurposed,Under construction,H2,Onshore,DN 1400,,,,"169,5 km",,"169,5 ",,"EUR 195,2 million ",Link,,,
+PiP-28,Flow-making hydrogen happen (East)- 2030,DEU,,,,,,GASCADE,2030,,Repurposed,Concept,H2,Onshore,DN 1400,,,,"174,3 km",,174.3,,"EUR 200,7 million  ",Link,,,
+PiP-29,Flow-making hydrogen happen (East)- 2030,DEU,CZE,,,,,GASCADE,2030,,Repurposed,Concept,H2,Onshore,DN 1400,,,,"22,4 km",,22.4,,"EUR 25,8 million",Link,,,
+PiP-30,Vlieghuis Ochtrup,DEU,NLD,,,,,Thyssengas,2027,,Repurposed,Under construction,H2,Onshore,"DN 400 (12,2 km) & DN600 (38 km)",,,,"51,2 km",,51.2,30-67.7,,Link,Link,Link,
+PiP-31,H2 Interconnector Bornholm Lubmin,DNK,DEU,,,,,"GASCADE, Energinet, Copenhagen Infrastructure Partners",2027,,New,Removed ,H2,Offshore,DN 1050 mm,,,,140 km,140.0,,,56 km with a budget of EUR 325 km,Link,Link,Link,
+PiP-32,doing hydrogen - 2026,DEU,,,,,,"ONTRAS,  Cemex, Enertag, Apex, Vattenfall",2026,,Repurposed,Feasibility study,H2,Onshore,Transport Capacity 84 GWh/d,,,,67.2 km,,67.2,,EUR 36 million,Link,Link,Link,Link
+PiP-33,doing hydrogen - 2027,DEU,,,,,,"ONTRAS,  Cemex, Enertag, Apex, Vattenfall",2027,,Repurposed,Feasibility study,H2,Onshore,Transport Capacity 84 GWh/d,,,,122.2 km,,122.2,,EUR 62.2 million,Link,Link,Link,
+PiP-34,doing hydrogen - 2028,DEU,,,,,,"ONTRAS,  Cemex, Enertag, Apex, Vattenfall",2028,,New,Concept,H2,Onshore,Transport Capacity 84 GWh/d,,,,146.8 km,146.8,,,EUR 430 million,Link,Link,,
+PiP-35,doing hydrogen - 2029,DEU,,,,,,"ONTRAS,  Cemex, Enertag, Apex, Vattenfall",2029,,New,Concept,H2,Onshore,Transport Capacity 84 GWh/d,,,,186.2 km,186.2,,,EUR 562 million,Link,Link,,
+PiP-36,doing hydrogen - 2030,DEU,,,,,,"ONTRAS,  Cemex, Enertag, Apex, Vattenfall",2030,,New,Concept,H2,Onshore,Transport Capacity 84 GWh/d,,,,72 km,72.0,,,EUR 255 million,Link,Link,,
+PiP-37,doing hydrogen - 2032,DEU,,,,,,"ONTRAS,  Cemex, Enertag, Apex, Vattenfall",2032,,New,Concept,H2,Onshore,Transport Capacity 84 GWh/d,,,,27 km,27.0,,,EUR 76 million,Link,Link,,
+PiP-38,Green Octopus Mitteldeutschland - 2026,DEU,,,,,,"ONTRAS, VNG Gasspeicher",2026,,Repurposed,Feasibility study,H2,Onshore,DN 400 mm,,,,35.6 km,,35.6,,EUR 14.3 million,Link,Link,,
+PiP-39,Green Octopus Mitteldeutschland - 2027,DEU,,,,,,"ONTRAS, VNG Gasspeicher",2027,,Repurposed & New,Feasibility study,H2,Onshore,DN 300-800 mm,,,,"Repurposed: 138.4 km, New: 7 km",7.0,138.4,,EUR 76.7 million,Link,,,
+PiP-40,Green Octopus Mitteldeutschland - 2028,DEU,,,,,,"ONTRAS, VNG Gasspeicher",2028,,Repurposed & New,Feasibility study,H2,Onshore,DN 600-800 mm,,,,"Repurposed: 45.7 km, New: 98.9 km",98.9,45.7,,EUR 301 million,Link,,,
+PiP-41,Energiepark Bad Lauchstädt,DEU,,,,,,"Uniper, VNG, Ontras",2025,,Repurposed,FID,H2,Onshore,DN 500 mm,,,,19.4 km,,19.4,,EUR 8.7,Link,Link,,
+PiP-42,RHYn Interco-Phase I,DEU,,,,,,"terranets, GRTgaz, BadenovaNETZE",2029,,Repurposed & New,Feasibility study,H2,Onshore,"DN 400 (16 inches) and DN 150 (6 inches) - 20,5 GWh/d",,,189.0,38 km,15.0,30.0,30.0,EUR 88 million (all phases),Link,Link,,
+PiP-43,RHYn Interco-Phase II,DEU,,,,,,terranets,2035,,Repurposed,Concept,H2,Onshore,,,,,60 km,,60,,,Link,,,
+PiP-44,Italian H2 Backbone,ITA,,,,,,SNAM,2030,,Repurposed & New,Feasibility study,H2,Onshore,"450 GWh/day 
+(import capacity), 168 GWh/day (export capacity towards Austria)","2890 km
+(including branches)",,,1940km,800.0,1140.0,,EUR 4.4 billion,Link,Link,Link,Link
+PiP-45,H2 Readiness of the TAG pipeline system,AUT,,,,,,TAG GmbH,2030,,Repurposed,Feasibility study,H2,Onshore,168 GWh/day,,,,380 km,0.0,380.0,,,Link,Link,Link,Link
+PiP-46,H2 Backbone WAG + Penta-West,AUT,SVK,DEU,,,,Gas Connect Austria,2030,,Repurposed & New,Feasibility study,H2,Onshore,150 GWh/day,,,,340 km (140 km repurposed),200.0,140.0,,,Link,Link,,
+PiP-47,HyPipe Bavaria - 2027,DEU,,,,,,bayernets,2027,,Repurposed & New,Feasibility study,H2,Onshore,DN 300-800 mm,,,,"Repurpsoed: 12.8 km, New: 12 km",12.0,12.8,,EUR 44 million,Link,,Link,
+PiP-48,HyPipe Bavaria -2030,DEU,,,,,,bayernets,2030,,Repurposed & New,Feasibility study,H2,Onshore,DN 400-700 mm,,,,"Repurposed: 184,9 km, New: 2 km",2.0,184.9,,EUR 93 million,Link,Link,,
+PiP-49,HyPipe Bavaria - 2032,DEU,,,,,,bayernets,2032,,Repurposed & New,Feasibility study,H2,Onshore,DN 800-900 mm,,,,"Repurposed: 89,2 km, New: 48 km",48.0,89.2,,EUR 211 million,Link,Link,,
+PiP-50,Baltic Sea Hydrogen Collector - Swedish section,SWE,,,,,,"Gasgrid Finland Oy, Nordion Energi AB,  Copenhagen Infrastructure Partners",2030,,New,Feasibility study,H2,Offshore,2.7 Mt/year/pipeline (2 pipelines considred),,,,168 km,168.0,,,,Link,Link,Link,Link
+PiP-51,Baltic Sea Hydrogen Collector - Finnish section,FIN,,,,,,"Gasgrid Finland Oy, Nordion Energi AB, Copenhagen Infrastructure Partners",2030,,New,Feasibility study,H2,Offshore,2.7 Mt/year/pipeline (2 pipelines considred),,,,80 km,80.0,,,,Link,Link,Link,Link
+PiP-52,Baltic Sea Hydrogen Collector - to Germany,FIN,DEU,DEU,,,,"Gasgrid Finland Oy, Nordion Energi AB,  Copenhagen Infrastructure Partners",2030,,New,Feasibility study,H2,Offshore,2.7 Mt/year/pipeline (2 pipelines considred),,,,855 km,855.0,,,,Link,Link,Link,
+PiP-53,Nordic Hydrogen route - Finnish section,FIN,,,,,,Gasgrid Finland Oy,2030,,New,Feasibility study,H2,Onshore,65 TWh/year,,,,530 km,530.0,,,"EUR 5,500  mil (including the Swedish section)",Link,Link,Link,Link
+PiP-54,Nordic Hydrogen route - Swedish section,SWE,,,,,,Nordion Energi AB,2029,,New,Feasibility study,H2,Onshore,65 TWh/year,,,,526 km,526.0,,,"EUR 3,500  mil (including the Finnish section)",Link,Link,Link,Link
+PiP-55,Nordic-Baltic Hydrogen corridor - Finnish section,FIN,,,,,,Gasgrid Finlad Oy,2030,,New,Feasibility study,H2,Onshore,1.85 Mt/year,,,,730 km,730.0,,,,Link,Link,Link,Link
+PiP-56,Nordic-Baltic Hydrogen corridor - Offshore interconnector FIN-EST,FIN,EST,,,,,"Gasgrid Finlad Oy, Elering",2030,,New,Feasibility study,H2,Offshore,1.85 Mt/year,,,,40 km,40.0,,,,Link,Link,Link,Link
+PiP-57,Nordic-Baltic Hydrogen corridor - Estonian section,EST,,,,,,Elering,2030,,New,Feasibility study,H2,Onshore,1.85 Mt/year,,,,290 km,290.0,,,,Link,Link,Link,Link
+PiP-58,Nordic-Baltic Hydrogen corridor - Latvian section,LVA,,,,,,Conexus Baltic Grid,2030,,New,Feasibility study,H2,Onshore,1.85 Mt/year,,,,288 km,288.0,,,,Link,Link,Link,Link
+PiP-59,Nordic-Baltic Hydrogen corridor - Lithuanian section,LTU,,,,,,Amber Grid,2030,,New,Feasibility study,H2,Onshore,1.85 Mt/year,,,,346 km,346.0,,,,Link,,,
+PiP-60,Nordic-Baltic Hydrogen corridor - Polish section,POL,,,,,,GAZ-SYSTEM,2030,,New,Feasibility study,H2,Onshore,1.85 Mt/year,,,,720 km,720.0,,,,Link,Link,Link,Link
+PiP-61,Nordic-Baltic Hydrogen corridor - German section,DEU,,,,,,Ontras,2033,,New,Feasibility study,H2,Onshore,2.7 mMt/year,,,,80 km,80.0,,,EUR 258 million,Link,Link,Link,Link
+PiP-62,Hamburg Hydrogen Industrial Network (HH-WIN) Phase 1 IPCEI,DEU,,,,,,Gasnetz Hamburg,2027,,New,Under construction,H2,Onshore,New pipelines 3.5 GW,,,,40 km,20.0,20,,,Link,Link,Link,
+PiP-63,Hamburg Hydrogen Industrial Network (HH-WIN) Phase 2,DEU,,,,,,Gasnetz Hamburg,2032,,New,FEED,H2,Onshore,New pipelines 3.5 GW,,,,20 km,20.0,,,,Link,Link,,
+PiP-64,Hamburg Hydrogen Industrial Network (HH-WIN) Phase 2,DEU,,,,,,Gasnetz Hamburg,2035,,Repurposed & New,Under construction,H2,Onshore,New pipelines 3.5 GW,,,,40 km,,,,,Link,Link,,
+PiP-65,AquaDuctus-AquaPrimus,DEU,,,,,,"RWE, Shell, Siemens Gamesa, Siemens Energy",2025,,New,Feasibility study,H2,Offshore,"2500 tH/year
+2x14MW offshore wind turbine
+offshore electrolysers",,,,20 km (approx.),20.0,,,,Link,Link,,
+PiP-66,AquaDuctus-H2ercules,DEU,,,,,,"Gasunie, Equinor, RWE, Shell",2028,,New,Feasibility study,H2,Offshore,"25 kt/year H2
+290 MW electrolyser",,,,78 km (some part will also be onshore). IPCEI: 100 km onshore and 200 km offshore,78.0,,,EUR 450 million,Link,Link,,
+PiP-67,AquaDuctus,DEU,,,,,,"GASCADE, Fluxys",2030,,New,Concept,H2,Offshore,20 GW,,,,200 km,200.0,,,EUR 1400 million,Link,Link,,
+PiP-68,AquaDuctus-Prolongation,DEU,,,,,,"GASCADE, Fluxys",2030,,New,Concept,H2,Offshore,20 GW,,,,221 km,221.0,,,,Link,Link,,
+PiP-69,Danish-German Hydrogen network,DNK,DEU,,,,,"Energinet, Gasunie",2030,,Repurposed & New,Feasibility study,H2,Onshore,Repurposed and new: 85 km,,,,85,85.0,,80 bar,EUR 991 million for CAPEX; operational subsidies EUR 1.11 billion,Link,Link,Link,Link
+PiP-70,Moolawatana Renewable Hydrogen Project ,AUS,,,,,,Kallis Energy Investments,,,New,Cancelled,H2,Onshore,"3 GW wind
+3 GW solar",,,,500 km,500.0,,,,Link,Link,,
+PiP-71,Hydrogen City - South Texas,USA,,,,,,"Green Hydrogen International, Energy Estate",2026,,New,Concept,H2,Onshore,"2 GW by 2026,
+60 GW (2.5 Mt H2) in the future",,,,"
+75 km",75.0,,,,Link,Link,Link,Link
+PiP-72,H2 Link Teeside-Humberside (Project Union),GBR,,,,,,National Grid,2028,,Repurposed & New,Concept,H2,Onshore,,,,,100 km,50.0,50.0,,,Link,Link,,
+PiP-73,UK's Project Union,GBR,,,,,,National Grid,,,Repurposed & New,Other/Unknown,H2,Onshore,,,,,2000 km,,,,GBR 1 bill,Link,,,
+PiP-74,HyEx-Phase 2,CHL,,,,,,"Engie, Enaex",2030,,New,Feasibility study,H2,Onshore,"130 kt H2, 2 GW electrolyser",,,,150 km,150.0,,,,Link,Link,Link,
+PiP-75,SK H2 network,KOR,,,,,,"Linde, Hyosung Corporation",2023,,New,Concept,H2,Onshore,30 t/day,,,,,,,,,Link,Link,,
+PiP-76,BrintØ,DNK,,,,,,CIP,2030,,New,Concept,H2,Offshore,1 Mt H2,,,,275 km,275.0,,,,Link,Link,Link,
+PiP-77,North Sea H2 Cooperation/EHB - NLD,NLD,,,,,,Minister for Climate and Energy Policy of the Netherlands,2040,,New,Concept,H2,Offshore,Large,,,,70 km,70.0,,,,Link,Link,,
+PiP-78,North Sea H2 Cooperation - NLD-BEL,NLD,BEL,,,,,"Minister for Climate and Energy Policy of the Netherlands, Minister for Energy of Belgium",2050,,New,Concept,H2,Offshore,,,,,260 km,260.0,,,,Link,Link,,
+PiP-79,UKOG's Portland Energy-Hub,GBR,,,,,,"UK Energy Storage - UK Oil & Gas (UKOG), Portland Port Limited",,,New H2-ready,Cancelled,H2,Onshore,28 million m3/day,,,,30 km,,,,,Link,Link,,
+PiP-80,MosaHYc (Moselle Sarre HYdrogène Conversion) - German side,DEU,,,,,,"NaTran, Creos Deutschland GmbH, Encevo",2027,,Repurposed & New,Feasibility study,H2,Onshore,0.2 Mt/year by 2030,,,60.0,"Repurposed 26 km, New+16 km",16.0,26.0,25.0,EUR 110 million (all phases),Link,Link,Link,Link
+PiP-81,"Belgium hydrogen backbone - Phase 1, port areas of Antwerp and Ghent and between them (Kallo to Zelzate)",BEL,,,,,,Fluxys,2026,,New,Under construction,H2,Onshore,0.33 Mt/year; 30 TWh,,,,70.0,70.0,,"Entry: 66 bar, Exit: 20 bar",EUR 330 million,Link,Link,Link,
+PiP-82,"Belgium hydrogen backbone - Phase 2, connection Germany",BEL,,,,,,Fluxys,2028,,Repurposed & New,Feasibility study,H2,Onshore,0.85  Mt/year,,,,,220.0,35.0,"Entry: 66 bar, Exit: 20 bar",,Link,Link,Link,
+PiP-83,"Belgium hydrogen backbone - Phase 3, connection Zeebrugge and Netherlands",BEL,,,,,,Fluxys,2032,,Repurposed,Feasibility study,H2,Onshore,0.44 Mt/year,,,,,,25.0,"Entry: 66 bar, Exit: 20 bar",,Link,Link,Link,
+PiP-84,"Belgium hydrogen backbone - Phase 3, connection France (Alveringem)",BEL,,,,,,Fluxys,2034,,Repurposed,Feasibility study,H2,Onshore,0.44 Mt/year,,,,,0.0,80.0,"Entry: 66 bar, Exit: 20 bar",,Link,Link,Link,
+PiP-85,"Belgium hydrogen backbone - Phase 3, connnection France (Mons-Valenciennes)",BEL,,,,,,Fluxys,2028,,New,Feasibility study,H2,Onshore,0.22  Mt/year,,,,,55.0,,"Entry: 66 bar, Exit: 20 bar",,Link,Link,Link,
+PiP-86,"Belgium hydrogen backbone - Phase 3, connection France (Blaregnies)",BEL,,,,,,Fluxys,2030,,New,Feasibility study,H2,Onshore,0.33  Mt/year,,,,,115.0,,"Entry: 66 bar, Exit: 20 bar",,Link,Link,Link,
+PiP-87,H2 transmission system in Bulgaria,BGR,GRC,,,,,Bulgartransgaz EAD (interconnected TSO: DESFA S.A.),2029,,New,Concept,H2,Onshore,1000 mm,,822000.0,648.0,250 km,250.0,,,860 M €,Link,Link,Link,
+PiP-88,Dedicated H2 pipeline in Greece,GRC,BGR,,,,,DESFA S.A.  (interconnected TSO: Bulgartransgaz),,,New,FEED,H2,Onshore,80 GWh/d,,822000.0,648,570 km,570.0,,,EUR 1 billion,Link,Link,,
+PiP-89,East-West Hydrogen Pipeline,CHN,,,,,,Sinopec,2030,,New,Feasibility study,H2,Onshore,"100 ktpa H2, further increase to 500 ktpa H2",,,,400 km,400.0,,,,Link,Link,Link,Link
+PiP-90,East Kimberley Clean Energy Project ,AUS,,,,,,"MG Corporation, Balanggarra Aboriginal Corporation, Kimberley Land Council, Pollination",2029,,New,FEED,H2,Onshore,50 ktpa and 25000 t/y,,,,120.0,120.0,,,,Link,Link ,Link,Link
+PiP-91,HyNet North West,GBR,,,,,,"ENI, Liverpool Bay CCS Ltd., Cadent , CF Fertilisers, Essar, Hanson, INOVYN, University of Chester",2030,,New,Feasibility study,H2,Onshore,,,,,100.0,100.0,,,,Link,Link,Link,Link
+PiP-92,Inverness hydrogen hub,GBR,,,,,,"H2 Green (Getech), SGN",2025,,Repurposed,Feasibility study,H2,Onshore,8 t H2/day,,,,,,,,,Link,Link,,
+PiP-93,Shoreham Port Green H2 Hub,GBR,,,,,,"H2 Green (Getech), Shoreham Port",,,New,Concept,H2,Onshore,8 t H2/day,,,,,,,,,Link,Link,,
+PiP-94,OGE H2ercules Central ,DEU,,,,,,"OGE, Thyssengas",2033,,Repurposed & New,Concept,H2,Onshore,DN 250-1.200 mm,,,,1386 km,402.0,984.0,,"EUR 2.160,2 million",LInk,,,
+PiP-95,H2ercules Network North,DEU,,,,,,OGE,2030,,Repurposed & New,Feasibility study,H2,Onshore,DN 800-1.400 mm,,,,424 km,360.0,74.0,,"EUR 1.701,4 million",LInk,Link,,
+PiP-96,H2ercules Network West,DEU,,,,,,OGE,2029,,New,Feasibility study,H2,Onshore,DN 1.000 mm,,,,54 km,27.0,27.0,,"EUR 101,4 million",LInk,Link,,
+PiP-97,H2ercules Network North-West,DEU,,,,,,"OGE, Thyssengas",2030,,Repurposed & New,Feasibility study,H2,Onshore,DN 600-1.000 mm,,,,87 km,42.0,45.0,,"EUR 127,3 million",LInk,,,
+PiP-98,Delta Rhine Corridor H2 Germany,DEU,,,,,,"OGE, Thyssengas",2032,,Repurposed & New,Feasibility study,H2,Onshore,DN 900 mm,,,,148 km,50.0,98.0,,"EUR 222,2 million",LInk,Link,,
+PiP-99,H2ercules Network South-East,DEU,,,,,,"OGE, GRTD",2030,,Repurposed & New,Feasibility study,H2,Onshore,DN 1.000-1.100 mm,,,,131 km,102.0,29.0,,"EUR 385,3 million",LInk,,,
+PiP-100,H2ercules Network South-West,DEU,,,,,,"OGE, GRTD",2030,,Repurposed & New,Feasibility study,H2,Onshore,DN 500-1100 mm,,,,223 km,19.0,204.0,,"EUR 183,7 million",LInk,,,
+PiP-101,Green Octopus,BEL,NLD,,,,,"WaterstofNet, Gasunie, Fluxys, Port of Rotterdam, Port of Antwerp, Port of Zeebrugge, North Sea Port, Engie, Colruyt Group, VDL, Salzgitter, Bosch, EKPO, OGE, Bosch, ArcelorMittal, Encevo, GRTgaz,HyNorth,Ineos",2035,,Repurposed & New,Concept,H2,Onshore,,,,,,,,,,Link,Link,Link,
+PiP-102,Hunter H2 Valley PROSPER,AUS,,,,,,"H2N, Energy Estate",2035,,New,Concept,H2,Onshore,,,,,"Muswellbrook-Newcastle: 120 km
+Kurri Kurri-Williamtown: 45 km
+Potential New England RE Zone (Armidale)-Muswellbrook: 206 km
+PotentialCentral-West Orana REZ (Mendooran)-Muswellbrook: 200 km",165.0,,,,Link,Link,Link,
+PiP-103,Belgian-Dutch H2 Network at North Sea Port,NLD,BEL,,,,,"Gasunie, Fluxys",2026,,New,Cancelled,H2,Onshore,,,,,60 km,,,,,Link,,,
+PiP-104,Germany-Norway cooperation on H2,NOR,DEU,,,,,Governments,,,New,Cancelled,H2,Offshore,,,,,>1300 km,,,,,Link,Link,,
+PiP-105,APA's Parmelia gas pipeline - conversion ,AUS,,,,,,APA group,2030,,Repurposed,Feasibility study,H2,Onshore,,,,,43 km,,43,,AUS 3 mil,Link,Link,Link,
+PiP-106,HyPerLink 1&2,DEU,,,,,,Gasunie,2029,,Repurposed & New,Feasibility study,H2,Onshore,4.1 GW,,,,"Repurposed: 283 km, New: 45.6 km",46.0,283,,EUR 318 million,Link,Link,Link,Link
+PiP-107,HyPerLink 3,DEU,DNK,,,,,"Gasunie, Energinet ",2031,,Repurposed & New,Feasibility study,H2,Onshore,2.5-8.6 GW,,,,"Repurposed: 175 km, New: 15 km",15.0,175,,EUR 146 million,Link,Link,Link,Link
+PiP-108,HyPerLink 4,DEU,,,,,,Gasunie,2027,,New,Feasibility study,H2,Onshore,3.8-10.8 GW,,,,55 km ,55.0,,,EUR 323 million,Link,Link,Link,
+PiP-109,HyPerLink 5,DEU,,,,,,"Gasunie, Thyssengas",2027,,New,Feasibility study,H2,Onshore,0.7-2.5 GW,,,,75 km,,75,,EUR 729 million,Link,Link,Link,
+PiP-110,Delta Rhine Corridor H2 Netherlands,NLD,,,,,,"Gasunie, OGE, BASF, SHELL",2032,,New,Feasibility study,H2,Onshore,,,,2.18 mtpa,NL: Approx 250 km,250.0,,,,Link,Link,Link,Link
+PiP-111,Croatia-Slovenia-Austria H2 Corridor - Phase 1,SVN,HRV,AUT,,,,Plinovodi d.o.o.,2029,,Repurposed,Concept,H2,Onshore,33 GWh/d; DN 800,,,,58 km,,58.0,70.0,,Link,Link,,
+PiP-112,Croatia-Slovenia-Austria H2 Corridor - Phase 2,SVN,HRV,AUT,,,,Plinovodi d.o.o.,2035,,New,Concept,H2,Onshore,34 GWh/d; DN 800,,,,4 km,4.0,,70.0,,Link,Link,,
+PiP-113,Italy-Slovenia-Hungary H2 Corridor - Phase 1,SVN,ITA,HUN,,,,Plinovodi d.o.o.,2029,,Repurposed,Concept,H2,Onshore,DN 800,,,,129 km,,129.0,50.0,,Link,Link,Link,Link
+PiP-114,Italy-Slovenia-Hungary H2 Corridor - Phase 2,SVN,ITA,HUN,,,,Plinovodi d.o.o.,2035,,New,Concept,H2,Onshore,section R15/1 Pince - Lendava: DN 500;  section M3/1 Vodice - Šempeter: DN 800,,,,176 km,176.0,,100.0,,Link,Link,Link,
+PiP-115,Czech Hydrogen Backbone South,CZE,,,,,,NET4GAS ,2029,,Repurposed,Feasibility study,H2,Onshore, 144 GWh/day,,,,403 km,,403.0,,below 0.3 MEUR/km,Link,Link,Link,Link
+PiP-116,"Czech Hydrogen Backbone West (project is part of the Czech-German Hydrogen Interconnector, Central European Hydrogen Corridor, SunsHyne Corridor and South-East European Hydrogen Corridor initiatives)",CZE,,,,,,"NET4GAS 
+[all partners of the Czech German Hydrogen Interconnector initiative: NET4GAS (CZ), GASCADE Gastransport (DE), Open Grid Europe (DE)]
+[all partners of the Central European Hydrogen Corridor initiative: NET4GAS (CZ), Open Grid Europe (DE), eustream (SK), Gas Transmission System Operator of Ukraine (UA)]
+[all partners of the SunsHyne Corridor initiative: NET4GAS (CZ), SNAM (IT), Trans Austria Gasleitung (AT), eustream (SK), Open Grid Europe (DE)]
+[all partners of the South-East European Hydrogen Corridor (SEEHyC) initiative: NET4GAS (CZ), DESFA (GR), Bulgartransgaz (BG), Transgaz (RO), FGSZ (HU), eustream (SK), Open Grid Europe (DE)]",2029,,Repurposed,FEED,H2,Onshore,144 GWh/day,,,,163 km ,,163.0,,below 0.3 MEUR/km,Link,Link,Link,Link
+PiP-117,"Czech Hydrogen Backbone North (project is part of the Central European Hydrogen Corridor, SunsHyne Corridor and South-East European Hydrogen Corridor initiatives)",CZE,,,,,,"NET4GAS
+[all partners of the Central European Hydrogen Corridor initiative: NET4GAS (CZ), Open Grid Europe (DE), eustream (SK), Gas Transmission System Operator of Ukraine (UA)]
+[all partners of the SunsHyne Corridor initiative: NET4GAS (CZ), SNAM (IT), Trans Austria Gasleitung (AT), eustream (SK), Open Grid Europe (DE)]
+[all partners of the South-East European Hydrogen Corridor (SEEHyC) initiative: NET4GAS (CZ), DESFA (GR), Bulgartransgaz (BG), Transgaz (RO), FGSZ (HU), eustream (SK), Open Grid Europe (DE)]",2029,,Repurposed,FEED,H2,Onshore,144 GWh/day,,,,381 km,,381.0,,below 0.3 MEUR/km,Link,Link,Link,Link
+PiP-118,Spanish Hydrogen Network: Export by Irún,ESP,FRA,,,,,Enagás Infraestructuras de Hidrógeno,2040,,New,Concept,H2,Onshore,,,,,82 km (Spain),82.0,,,,Link,Link,Link,
+PiP-119,Spanish Hydrogen Network: Export by Larrau,ESP,FRA,,,,,Enagás Infraestructuras de Hidrógeno,2040,,New,Concept,H2,Onshore,,,,,146 km (Spain),146.0,,,,Link,Link,Link,
+PiP-120,"Spanish Hydrogen Backbone: Extension (Guitiriz -Zamora hydrogen
+pipeline. Huelva - Algeciras hydrogen
+pipeline, Northern Plateau transversal
+hydrogen pipeline, Southern Plateau transversal hydrogen
+pipeline, connected to Madrid)",ESP,,,,,,Enagás Infraestructuras de Hidrógeno,2030,,Repurposed & New,Feasibility study,H2,Onshore,,,,,1480 km,740.0,740.0,,,Link,Link,,
+PiP-121,Spanish Hydrogen Backbone: Central Axis,ESP,,,,,,Enagás Infraestructuras de Hidrógeno,2040,,Repurposed & New,Concept,H2,Onshore,,,,,900 km,450.0,450.0,,,Link,Link,,
+PiP-122,RES/Alby-Sundsvall,SWE,,,,,,Nordion Energi AB,2028,,New,Feasibility study,H2,Onshore,Medium,,,,120 km,120.0,,,,Link,Link,Link,
+PiP-123,West Coast SE,SWE,,,,,,Nordion Energi AB,2030,,New,Concept,H2,Onshore,Large,,,,120 km,120.0,,,,,,,
+PiP-124,RHYn - First Phase,FRA,,,,,,NaTran,2029,,Repurposed & New,Feasibility study,H2,Onshore,"estimated around 520 t/d (20,5 GWh/day)",,,189.0,38km,12.0,26.0,30-67.7 bar,EUR 88 million (all phases),Link,Link,,
+PiP-125,RHYn - Switzerland connection (phase 2),FRA,CHE,,,,,NaTran,2029,,New,Feasibility study,H2,Onshore,"estimated around 520 t/d (20,5 GWh/day). -Diameter: DN400-",,,189.0,21 km,21.0,,30-67.7 bar,EUR 88 million (all phases),Link,Link,,
+PiP-126,RHYn - Germany connection (Phase 4),FRA,DEU,,,,,"NaTran, Terranets bw 
+GmbH ",2029,,New,Feasibility study,H2,Onshore,12 GWh/d (by 2029) from France to Germany,,,189.0,5 km,5.0,,30-67.7 bar,EUR 88 million (all phases),Link,Link,,
+PiP-127,Franco-Belgian H2 corridor: Port of Dunkirk to Channel ports,FRA,BEL,,,,,"NaTran, Fluxys",2034,,New,FEED,H2,Onshore,1 Mt/year,,,,50 km,50.0,,,EUR 505 million (all phases),Link,Link,Link,
+PiP-128,Franco-Belgian H2 corridor: Valenciennes to Marchipont,FRA,BEL,,,,,"NaTran, Fluxys",2028,,New,FEED,H2,Onshore,section R15/1 Pince - Lendava: DN 500;  section M3/1 Vodice - Šempeter: DN 800,,,,40 km,40.0,,,EUR 505 million (all phases),Link,Link,Link,
+PiP-129,Franco-Belgian H2 corridor: Taisnieres to Paris,FRA,,,,,,NaTran,2030,,Repurposed,Concept,H2,Onshore,1 Mt/year; 60 GWh/d,,,,200 km,,200.0,,EUR 505 million (all phases),Link,Link,,
+PiP-130,Franco-Belgian H2 corridor: Taisnieres to Nancy,FRA,,,,,,NaTran,2034,,Repurposed,Concept,H2,Onshore,1 Mt/year; 25 GWh/d,,,,265 km,,265.0,,EUR 505 million (all phases),Link,Link,,
+PiP-131,MosaHYc (Moselle Sarre HYdrogène Conversion) - French side,FRA,,,,,,"NaTran, Creos Deutschland GmbH, Encevo",2027,,Repurposed & New,FID,H2,Onshore,"65 000t/y (7,3 GWh/d)",,,60.0,52 km,6.0,46.0,28.0,EUR 55 million,Link,Link,Link,Link
+PiP-132,The Morocco Offer,MAR,,,,,,,2040,,New,Concept,H2,Onshore,,,,,5600km,5600.0,,,,Link,Link,Link,Link
+PiP-133,Zhangjiakou Kangbao-Caofeidian pipeline,CHN,,,,,,"Tangshan Haitai New Energy Technology (THNET), China Petroleum Pipeline Engineering Corporation (CPPEC)",2026,,New,Under construction,H2,Onshore,DN 813 mm; 1.55 Mt/a,,,,1037km,1037.0,,63.0,USD 845 Million,Link,Link,Link ,Link 
+PiP-134,Singapore - Malaysia H2 pipeline,SGP,MYS,,,,,"City Energy, Gentari",2027,,New,Feasibility study,H2,Onshore,,,,,100 km (approx. based on distance),100.0,,,,Link,Link,Link,
+PiP-135,Singapore - Indonesia H2 pipeline,SGP,IDN,,,,,"Sembcorp Utilities, PT PLN",2035,,New,FEED,H2,Offshore,100 ktpa H2,,,,1000 km (approx. based on distances),1000.0,,,,Link,Link,Link,
+PiP-136,UK and Germany North Sea Pipeline,GBR,DEU,,,,,UK and Germany Government,2035,,New,Feasibility study,H2,Offshore,,,,,400 km,400.0,,,£2.7 billion,Link,,,
+PiP-137,Clean Hydrogen Coastline,DEU,,,,,,EWE,2026,,Repurposed & New,FID,H2,Onshore,DN 200 & 400,,,,"Repurposed: 31.9, New: 28.5",28.5,31.9,,EUR 70 million,Link,Link,,
+PiP-138,Alpine H2 Corridor,CHE,,,,,,"FluxSwiss, Transitgas",2035,,Repurposed & New,Feasibility study,H2,Onshore,3 - 9 GW,,,,300-350 km ,150.0,150.0,,,Link,Link,,
+PiP-139,UK-BE H2 Interconnector,BEL,GBR,,,,,"Fluxys, National Gas, Interconnector ",2045,,New,Feasibility study,H2,Offshore,96 GWh/d,,,,231 km,231.0,,,EUR 1.5 billion,Link,,,
+PiP-140,Spain-Morocco Link,ESP,MAR,,,,,"Enagás Infraestructuras de Hidrógeno, Onhym",2040,,New,Concept,H2,Offshore,,,,,50 km,50.0,,,,Link,Link,,
+PiP-141,H2 transmission system in Bulgaria (Phase 2 of SEE H2 Priority Corridor),BGR,ROU,,,,,Bulgartransgaz EAD  (interconnected TSO: Transgaz ) ,2029,,New,Concept,H2,Onshore,1000 mm,,,,330 km,330.0,,,,Link,,,
+PiP-142,"Hungary-Slovakia H2 Corridor, HU part",HUN,,,,,,"FGSZ Ltd., Eustream,    all partners of the South-East European Hydrogen Corridor (SEEHyC) initiative: NET4GAS (CZ), DESFA (GR), Bulgartransgaz (BG), Transgaz (RO), FGSZ (HU), eustream (SK), Open Grid Europe (DE)]",2029,,New,Feasibility study,H2,Onshore,100 GWh/day,164 km ,164.0,0.0,209 km ,209.0,0.0,PN75,EUR 365 million,Link,Link,Link,Link
+PiP-143,"Romania-Hungary H2 Corridor, HU part",HUN,,,,,,"FGSZ Ltd., Transgaz;     [all partners of the South-East European Hydrogen Corridor (SEEHyC) initiative: NET4GAS (CZ), DESFA (GR), Bulgartransgaz (BG), Transgaz (RO), FGSZ (HU), eustream (SK), Open Grid Europe (DE)]",2029,,New,Feasibility study,H2,Onshore,76-100 GWh/day,203 km ,203.0,0.0,192.2 km ,192.2,0.0,PN75,EUR 511 million,Link,Link,Link,Link
+PiP-144,"Hungary-Slovenia H2 Corridor, HU part",HUN,,,,,,"FGSZ Ltd., Plinovodi",2035,,New,Feasibility study,H2,Onshore,30 GWh/day,201,201.0,0.0,185.5,185.5,0.0,PN75,EUR 385 million,Link,,Link,Link
+PiP-145,"Ukraine-Hungary H2 Corridor, HU part",HUN,,,,,,"FGSZ Ltd., ",2029,,Repurposed & New,Feasibility study,H2,Onshore,100 GWh/day,353,9.0,344.0,353.0,9.0,344.0,PN63,EUR 365 million,Link,,Link,
+PiP-146,Slovak Hydrogen backbone,SVK,,,,,,eustream,2035,,Repurposed,Feasibility study,H2,Onshore, 218.4 GWh/day,,,,500.0,,500.0,45.0,,Link,Link,Link,Link
+PiP-147,"SK-HU H2 corridor, SK part",SVK,,,,,,eustream,2029,,New,Concept,H2,Onshore,100 GWh/d,,,,19.0,19.0,,55.0,,Link,,,
+PiP-148,Alpine HyWay,DEU,,,,,,"Fluxys TENP, OGE",2040,,Repurposed & New,Concept,H2,Onshore,DN 900/1000,,,,272 km,156.0,116.0,70.0,,,,,
+PiP-149,Celtic hydrogen cluster,IRL,,,,,,Gas Networks Ireland,2028,,Repurposed,Feasibility study,H2,Onshore,,,,,15 km,,15.0,70.0,EUR 40 million,Link,,,
+PiP-150,H2 Valley Puglia (IPCEI Hy2Infra IT21),ITA,,,,,,SNAM,2028,,Repurposed & New,Feasibility study,H2,Onshore,120000 Nmc/h,,,,"109 km
+(~80% repurposed)",24.0,84.0,24.0,EUR 100 million,Link,Link,,
+PiP-151,Scottish-Irish backbone link,IRL,GBR,,,,,,2040,,New,Concept,H2,Offshore,,,,,100 km,100.0,,,,Link,Link,,
+PiP-152,East London Hydrogen Pipeline ,GBR,,,,,,"Capital Hydrogen, Cadent",2030,,New,Feasibility study,H2,Onshore,"5,000GWh of hydrogen",,,,90 km,90.0,,,,Link,Link,Link,Link
+PiP-153,East Coast Hydrogen Pipeline,GBR,,,,,,"Northern Gas Networks, Cadent, National Grid",2028,,Repurposed & New,FEED,H2,Onshore,,,,,565 km,328.0,237.0,,,Link,Link,Link,
+PiP-154,Connection - Northwestern Italy to Southern Germany,ITA,DEU,,,,," Snam, Fluxswiss, Transitgas, Fluxys, Open Grid Europe (OGE)",2035,,Repurposed & New,Feasibility study,H2,Onshore,88 GWh/day (export capacity towards Switzerland),,,,415 km,155.0,260.0,75.0,EUR  0.7 billion,Argus Media,Link,,
+PiP-155,Angeles Link H2 pipeline project,USA,,,,,,SoCalGas,2033,,New,Concept,H2,Onshore,500 ktpa - 1.5 Mtpa,,,,724 km,724.0,,,USD 266 million (for the detailed feasibility and engineering studies),Link,Link,Link,Link
+PiP-156,North Sea pipeline linked to DEMO1 project ,NLD,,,,,,"Petrogas, Gasunie",,,Repurposed,Feasibility study,H2,Offshore,,,,,,,,,,Link,Link,,
+PiP-157,Scotland - Germany link ,GBR,DEU,,,,,,,,Repurposed & New,Feasibility study,H2,Offshore,,,,,,,,,USD 3.3 billion,Link,Link,,
+PiP-158,ONTRAS H2 start-up network,DEU,,,,,,"ONTRAS, TotalEnergies, Uniper, Terrawatt, VNG",2025,,Repurposed,Operational,H2,Onshore,2.7 ktpa,,,,25 km ,,25.0,,EUR 210 million,Link,Link,,
+PiP-159,Lingen - Bad Bentheim,DEU,,,,,,Nowega,2025,,Repurposed,Operational,H2,Onshore,"28,500 m3 for inaugural filling",,,,55 km ,,55.0,,,Link,Link,,
+PiP-160,Ordos -Chifeng pipeline  ,CHN,,,,,,,,,New,Concept,H2,Onshore,,,,,800km,800.0,,,,Link,,,
+PiP-161,Baotou to Linhe Hybrid Hydrogen Pipeline ,CHN,,,,,,,,,New,Operational,CH4,Onshore,,,,,249 km,,,,,Link,,,
+PiP-162,Guyang to Baiyun Ebo Hydrogen Pipeline ,CHN,,,,,,,,,New,FEED,H2,Onshore,DN457 mm,,,,125 km,125.0,,,,Link,,,
+PiP-163,Luquan Green Hydrogen Pipeline (Hebei) ,CHN,,,,,,,,,New,Concept,H2,Onshore,4000 tpa,,,,"49,5 km",49.5,,,,,,,
+PiP-164,Wulanbuhe to Baotou Hydrogen Transmission Pipeline ,CHN,,,,,,,,,New,Concept,H2,Onshore,,,,,164 km ,164.0,,,,Link,,,
+PiP-165,Hangjinqi Yuanbaoshan to Ulanqab Hydrogen Pipeline ,CHN,,,,,,,,,New,Concept,H2,Onshore,,,,,82 km  ,82.0,,,,Link,,,
+PiP-166,Uxin Banner Yijinhuoluo to Hangjinqi Pipeline ,CHN,,,,,,,,,New,Concept,H2,Onshore,,,,,185 km,185.0,,,,Link,,,
+PiP-167,Shendong Coal Chemical Hydrogen Pipeline,CHN,,,,,,,,,New,Concept,H2,Onshore,,,,,177km,177.0,,,,Link,,,
+PiP-168,Yuanbaoshan to Ulanqab Hydrogen Pipeline ,CHN,,,,,,,,,New,Concept,H2,Onshore,,,,,144 km,144.0,,,,Link,,,
+PiP-169,Yijinhuoluo to Hangjinqi Fine Chemical Hydrogen Pipeline ,CHN,,,,,,,,,New,Concept,H2,Onshore,,,,,299 km,299.0,,,,Link,,,
+PiP-170,Bayannur to Hangjinqi Fine Chemical Hydrogen Pipeline ,CHN,,,,,,,,,New,Concept,H2,Onshore,,,,,353 km,353.0,,,,Link,,,
+PiP-171,Wuhai to Tongliao Hydrogen Pipeline ,CHN,,,,,,,,,New,Concept,H2,Onshore,,,,,1025 km,1025.0,,,,Link,,,
+PiP-172,Baotou to Shanghai Planned Hydrogen Pipeline ,CHN,,,,,,,,,New,Concept,H2,Onshore,,,,,900 km,900.0,,,,Link,,,
+PiP-173,Barun Industrial Park to Kundulun District (Baotou City),CHN,,,,,,China Huadian Group,2025,,New,FID,H2,Onshore,457 mm,,,,195 km,195.0,,6.3 Mpa,,Link,Link,,
+PiP-174,Sinopec Baling-Changling hydrogen purification and transmission pipeline ,CHN,,,,,,,2014,,New,Operational,H2,Onshore,44 ktpa,,,,42 km,42.0,,4 Mpa,,Link,,,
+PiP-175,Jinling-Yangzi hydrogen pipeline ,CHN,,,,,,,2007,,New,Operational,H2,Onshore,"DN 325 m, 40 ktpa",,,,32 km,32.0,,,,Link,,,
+PiP-176,The Jiyuan-Luoyang hydrogen pipeline ,CHN,,,,,,,2015,,New,Operational,H2,Onshore,DN 500 mm; 100 ktpa,,,,25 km,25.0,,,,Link,,,
+PiP-177,"Batam, Indonesia-Singapore pipeline ",IDN,SGP,,,,,Aslan Energy Capital,2028,,New,FEED,H2,Offshore,"110,000 mt/year",,,,40 km,40.0,,,,Link,Link,,
+PiP-178,Hydrogen backbone in Oman,OMN,,,,,,,2035,,New,FEED,H2,Onshore,,,,,300-400 km,350.0,,,,,,,
+PiP-179,Komnina-Florovouni Pipeline,GRC,ITA,,,,,DESFA S.A. ,2036,,New,Concept,H2,Onshore,30 GWh/day,,,,262 km,262.0,,,EUR 400 million,,,,
+PiP-180,Amintaio-Komnina Pipeline,GRC,,,,,,DESFA S.A. ,2027,,New,Feasibility study,H2,Onshore,"0,72 GWh/day",,,,9 km,9.0,,,"EUR 13,01  million",,,,
+PiP-181,H2 backbone Croatia - North,HRV,HUN,,,,,PLINACRO Ltd.,2030-2041,,Repurposed & New,Concept,H2,Onshore,From DN300 to DN800,,,,628 km,250.0,378.0,30 bar - 50 bar,EUR 720 mill.,,,,
+PiP-182,H2 backbone Croatia - South,HRV,HUN,,,,,PLINACRO Ltd.,2040,,Repurposed,Concept,H2,Onshore,From DN300 to DN800,,,,542 km,,542.0,50 bar - 75 bar,EUR 205 mill.,,,,
+PiP-183,H2 interconnection Croatia/Slovenia (Lučko-Zabok-Rogatec),HRV,SVN,,,,,PLINACRO Ltd.,2035,,New,Under construction,H2,Onshore,DN700,,,,74 km,74.0,,50 bar  ,EUR 150 mill.,,,,
+PiP-184,H2 Ionian Adriatic Pipeline,HRV,ALB,,,,,"PLINACRO Ltd., Montenegro Bonus Ltd, ALBGAZ",2030,,New,Concept,H2,Onshore,DN800,,,,511 km,511.0,,75 bar - 85 bar,EUR 1385 mill.,,,,
+PiP-185,H2 repurposing interconnection HR-HU,HRV,HUN,,,,,"PLINACRO Ltd, FGSZ Ltd.",2040,,Repurposed,Concept,H2,Onshore,DN800,,,,80 km,,80.0,50 bar,EUR 40 mill.,,,,
+PiP-186,Interconnection Croatia/Serbia (Slobodnica-Sotin-Bačko Novo Selo),HRV,SRB,,,,,PLINACRO Ltd.,2030,,New,Concept,H2,Onshore,From DN500 to DN800,,,,132 km,132.0,,50 bar - 75 bar,EUR 318 mill.,,,,
+PiP-187,Interconnection Croatia-Bosnia and Herzegovina (Slobodnica-Bosanski Brod),HRV,BIH,,,,,"PLINACRO Ltd., BH GAS",2023,,New,Concept,H2,Onshore,DN700,,,,5 km,5.0,,75 bar,EUR 9 mill.,,,,
+PiP-188,Interconnection Croatia-Bosnia and Herzegovina (South),HRV,BIH,,,,,"PLINACRO Ltd., BH GAS",2027,,New,Concept,H2,Onshore,DN500,,,,22km,22.0,,75 bar,EUR 169 mill.,,,,
+PiP-189,Interconnection Croatia-Bosnia and Herzegovina (west),HRV,BIH,,,,,"PLINACRO Ltd., BH GAS",2029,,New,Concept,H2,Onshore,DN501,,,,30km,30.0,,75 bar,EUR 45 mill.,,,,
+PiP-190,North African Hydrogen Corridor,TUN,ITA,,,,,SeaCorridor,2030,,Repurposed & New,Feasibility study,H2,Offshore,450 GWh/day ,,,,910 km,755.0,155.0,75-114,EUR  4.2 billion,Link,Link,,
+PiP-191,H2 Backbone Murfeld,AUT,SVN,,,,,Gas Connect Austria,2030,,New,Concept,H2,Onshore,33 GWh/day,,,,26km,26.0,,,,Link,,,
+PiP-192,Connexion HY-FEN-GeoH2,FRA,,,,,,NaTran,2030,,New,FEED,H2,Onshore,,,,,100km,100.0,,67.7,EUR 290 mil,,,,
+PiP-193,RHYn -  Fessenheim -Marckolsheim (phase 3),FRA,,,,,,NaTran,2032,,Repurposed,Feasibility study,H2,Onshore,"estimated around 520 t/d (20,5 GWh/day).",,,,38km,,38.0,,EUR 88 million (all phases),,,,
+PiP-194,AtlantHYc : microgrid phase,FRA,,,,,,NaTran,2029,,New,FEED,H2,Onshore,,,,,10km,10.0,,50.0,EUR 17 million,,,,
+PiP-195,AtlantHYc : Dorsale phase,FRA,,,,,,NaTran,2032,,New,FEED,H2,Onshore,,,,,550km,550.0,,30.0,EUR 1700 million,,,,
+PiP-196,HY4Link : border -Thionville; Thionville-Bouzonville,FRA,,,,,,"NaTran, Creos Luxembourg, Fluxys",2030,,New,Feasibility study,H2,Onshore,,,,,92 km,92.0,,s,EUR 212 million,,,,
+PiP-197,HY4Link : Thionville-Cerville,FRA,,,,,,NaTran,2034,,New,Feasibility study,H2,Onshore,,,,,93 km,93.0,,67.7,EUR 239 million,,,,
+PiP-198,MidHY,FRA,,,,,,NaTran,2029,,New,Feasibility study,H2,Onshore,,,,,220 km,220.0,,67.0,EUR 500 million,,,,
+PiP-199,Port of Duisburg,DEU,,,,,,Port of Duisburg,,,New,Concept,H2,Onshore,,,,,<10km,10.0,,,,Link,,,
+PiP-200,Flow-making hydrogen happen (East) - 2025,DEU,,,,,,GASCADE,2025,,New,Under construction,H2,Onshore,DN 800,,,,"1,2 km",1.2,,,"EUR 6,5 million",Link,,,
+PiP-201,Flow-making hydrogen happen  (East)- 2029,DEU,,,,,,GASCADE,2029,,New,Concept,H2,Onshore,DN 800,,,,16 km,16.0,,,"EUR 49,7 million ",Link,,,
+PiP-202,Flow-making hydrogen happen  (East)- 2029,DEU,POL,,,,,GASCADE,2029,,New,Concept,H2,Onshore,DN 800,,,,33 km,33.0,,,"EUR 102,5 million ",Link,,,
+PiP-203,Flow-making hydrogen happen (West) - 2029,DEU,,,,,,GASCADE,2029,,New,Concept,H2,Onshore,DN 500,,,,120 km,120.0,,,"EUR 259,2 millions",Link,,,
+PiP-204,Flow-making hydrogen happen (West) - 2029,DEU,,,,,,GASCADE,2025,,Repurposed,Under construction,H2,Onshore,DN 1200,,,,114 km,,114.0,,EUR 104 million,Link,,,
+PiP-205,Flow-making hydrogen happen (West) - 2029,DEU,,,,,,GASCADE,2029,,Repurposed,Concept,H2,Onshore,DN 800,,,,"61,7 km",,"61,7",,"EUR 38,7 million",Link,,,
+PiP-206,Flow-making hydrogen happen (West) - 2029,DEU,,,,,,GASCADE,2029,,Repurposed,Concept,H2,Onshore,DN 800,,,,"9,9 km",,"9,9",,"EUR 6,2 million",Link,,,
+PiP-207,Flow-making hydrogen happen (West) - 2029,DEU,,,,,,GASCADE,2029,,Repurposed,Concept,H2,Onshore,DN 800,,,,"47,2 km",,47.2,,"EUR 29,7 million",Link,,,
+PiP-208,Flow-making hydrogen happen (West) - 2029,DEU,,,,,,GASCADE,2029,,Repurposed,Concept,H2,Onshore,DN 800,,,,"96,4 km",,"96,4",,"EUR 60,5 million",Link,,,
+PiP-209,Flow-making hydrogen happen (West) - 2029,DEU,,,,,,GASCADE,2029,,Repurposed,Concept,H2,Onshore,DN 800,,,,202 km,,202.0,,"EUR 126,7 million",Link,,,
+PiP-210,Flow-making hydrogen happen (West) - 2029,DEU,,,,,,GASCADE,2029,,Repurposed,Concept,H2,Onshore,DN 1000,,,,"96,9 km",,"96,9",,EUR 74 million,Link,,,
+PiP-211,Flow-making hydrogen happen (West) - 2029,DEU,,,,,,GASCADE,2029,,New,Concept,H2,Onshore,DN 800,,,,10 km,10.0,,,EUR 32 million,Link,,,
+PiP-212,Flow-making hydrogen happen (West) - 2030,DEU,,,,,,GASCADE,2030,,New,Concept,H2,Onshore,DN 800,,,,59 km,59.0,,,"EUR 172,9 million",Link,,,
+PiP-213,Flow-making hydrogen happen  (East)- 2028,DEU,,,,,,GASCADE,2028,,New,Concept,H2,Onshore,DN 1000,,,,105 km,105.0,,,EUR 375 million,Link,,,
+PiP-214,Flow-making hydrogen happen (West) - 2030,DEU,,,,,,GASCADE,2030,,New,Concept,H2,Onshore,DN 1200,,,,142 km,142.0,,,"EUR 592,4 million",Link,,,
+PiP-215,AWZ Ostsee-Lubmin,DEU,,,,,,GASCADE,2029,,New,Concept,H2,Offshore,DN 1050,,,,56 km,56.0,,,"EUR 592,4 million",Link,Link,,
+PiP-216,AquaDuctus,DEU,NLD,,,,,GASCADE,2030,,New,Concept,H2,Offshore,"20 GW
+DN 1400",,,,102 km,102.0,,,"EUR 588,7 million",Link,Link,,
+PiP-217,WNL (Hydrogen Network Netherlands),NLD,,,,,,Gasunie,2030,,Repurposed & New,FEED,H2,Onshore,,,,,1200 km,400.0,800.0,66.2 bar,,Link,,,
+PiP-218,H2EU+Store ,SVK,UKR,,,,,"RAG Austria, Bayerngas, bayernets, Gas Connect Austria, Eco-Optima, eustream, Nafta, Open Grid Europe, Gas Transmission System Operator of Ukraine, Storage System Operator of Ukraine (Ukrtransgaz JSC) and MND",2030,,Repurposed & New,FEED,H2,Onshore,1 Mt/year (in 2050),,,,30 km,30.0,,,,Link,,,
+PiP-219,National H2 pipeline: Jezreel Valley - Eilot,ISR,,,,,,,,,,Feasibility study,H2,Onshore,,,,,400 km,,,,,Link,,,

@@ -1,0 +1,45 @@
+Ref,Project name,Country,Partners,Date online,Decomission date,Status,H2_blend,Announced Size,Capacity_MWel,Capacity_nm³ H₂/h,Capacity_kt H2/y,Length_km,Pressure_bar,Costs_MUSD,Link 1,Link 2
+BLE-1,HyPSA-Hydrogen Park South Australia,AUS,Australian Gas Networks,2021.0,,Operational,10%,"1.25 MW electrolyser,700 customers by pipeline + other uses by truck",1.25,,,,,AUD $14.5million,Link,Link
+BLE-2,Western Sydney Green Gas,AUS,Jemena,2021.0,,Operational,2%,"23500 residential, 100 commercial and 7 industrial customers",,100Nm3/h,,,,AUD$15 million,Link,Link
+BLE-3,Hydrogen park Gladstone,AUS,Australian Gas Networks,2024.0,,Operational,10%,"2.75 kg H2/hour, 175 kW electrolyser, 700 connections ",,,,,,AUD$6.48 million,Link,Link
+BLE-4,Community Blending Project  - Western Australia,AUS,ATCO,2022.0,,Operational,2-5% (10% by 2030),"2700 connections, 175kw",0.175,,,,,AUD$2.6 million,Link,Link
+BLE-5,Clean Energy Innovation Park,AUS,"ATCO Australia, Australian Gas Infrastructure Group (AGIG)",2023.0,,Cancelled,,175 TJ,,,,,,,Link,Link
+BLE-6,Hydrogen park Murray Valley,AUS,"Australian Gas Networks, Engie",2025.0,,Under construction,10%,"500 t H2/y, 100 MW electrolyser, 40k demand connections ",,,,,,AUD 65.46 million,Link,Link
+BLE-7,Fort Saskatchewan hydrogen blending project,CAN,ATCO,2022.0,,Operational,20%,2100 customers,10,,,,,CAD  $7.39 million,Link,Link
+BLE-8,Hydrogen-blending pilot in Markham,CAN,"Enbridge Gas, Cummins",2022.0,,Operational,2%,3600 consumers,,,,,,CAD 5.2 million,Link,Link
+BLE-9,Gasvalpo Energas Coquimbo,CHL,Gasvalpo,2022.0,,Operational,5-20%,>2000 homes,,,,,,,Link,Link
+BLE-10,"Promigas, Surtigas-Heroica",COL,"Promigas, Surtigas",2022.0,,Operational,,1.6 t H2/year (15 t H2/year in next pilot phase),,,0.0016,,,,Link,
+BLE-11,ITM Power Thüga Plant,DEU,ITM,2013.0,2017.0,Decommisioned,,325 kW electrolyser,0.325,,,,,,Link,
+BLE-12,WindGas Haßfurt,DEU,WindGas Haßfurt,2016.0,,Operational,4-5%,"14000 customers, 1 GWh",,,,,,,Link,Link
+BLE-13,Freiburg Municipal Energy Network,DEU,The Fraunhofer Institute for Solar Energy Systems,2017.0,,Operational,2%,200 kW electrolyser,0.2,,,,,,Link,
+BLE-14,Brunsbüttel blending facility ,DEU,"Wind2Gas Energy, Schleswig-Holstein Netz and others",2019.0,,Operational,2%,2.4 MW electrolyser,2.4,,,,,€4.5 million,Link,Link
+BLE-15,Green Hysland,ESP,"Redexis, Enagás",2024.0,,Operational,2%,"2.5 MW electrolyser,  115,000 households and 2,000 industrial and tertiary consumers",2.5,,,3.2 km dedicated hydrogen pipeline and a mixer. 1400 km natural gas network,,,Link,Link
+BLE-16,Jupiter 1000 demonstration project ,FRA,"GRTgaz, CEA, Atmostat, RTE, Ter'ega, McPhy, Lerous&Lotz",2020.0,,Operational,1-2%,"200 m3/h of hydrogen, 1 MW electrolyser capacity ",1,,,,,€31.3 million,Link,Link
+BLE-17,HyDeploy,GBR,"Ofgem, Cadent, Northern Gas Networks, Progressive Energy",2019.0,2021.0,Decommisioned,20%,130 homes,,,,,,,Link,
+BLE-18,HyDeploy2,GBR,"Ofgem, Cadent, Northern Gas Networks, Progressive Energy",2021.0,2022.0,Decommisioned,20%,"688 homes, a church, primary school and several small businesses",,,,,,GBR 14.9 mill,Link,
+BLE-19,HyNet-Blending,GBR,"ENI, Liverpool Bay CCS Ltd., Cadent Gas, CF Fertilisers, Essar, Hanson, INOVYN, University of Chester",2025.0,,Cancelled,20%,2000 homes,,,,,,,Link,Link
+BLE-20,White Dragon,GRC,"Region of Western Macedonia, Cluster of Bioeconomy and Environment of Western Macedonia, Depa Commercial, Damco Energy, PPV Greece, Desfa (Hellenic Gas Transmission System Operator), Hellenic Petroleum, Motor Oil, Corinth Pipeworks, TAP, Terna Energy",2030.0,,Concept,"5.6% by 2030, 15.6% by 2050 ",253 kt H2/year blended to the grid,,,,,,,Link,Link
+BLE-21,Hydrogen Blending in Indore,IND,"GAIL, HPCL--Avantika Gas Limited",2022.0,,Operational,5%,"10 MW electrolyser capacity, 4.3 t/d of green hydrogen ",,,,,,,Link,Link
+BLE-22,NTPC-GGL in Surat,IND,"NTPC, Gujarat Gas",2023.0,,Operational,8% v. (scaled to 20% in future),200 customers,,,,,,,Link,Link
+BLE-23,Floene Seixal,PRT,"Floene, Seixal City Council, Bosch, Catim, Gestene, ISQ, PRF, the Higher Technical Institute and Portuguese Association for the Promotion of Hydrogen - HP2H",2023.0,,Operational,20%,"82 customers,  electrolyser capacity of 50 kW",,,,,,,Link,Link
+BLE-24,20HyGrid,ROU,Delgaz Grid (E.ON Romania group),2023.0,,Decommisioned,20%,75 customers,,,,,,,Link,Link
+BLE-25,CenterPoint Energy,USA,CenterPoint Energy,2021.0,,Operational,5%,432 kg H2/day,,,,,,,Link,Link
+BLE-26,Therm H2 - Salt Lake City ,USA,Dominion Energy,2021.0,,Decommisioned,5%,,,,,,,,Link,Link
+BLE-27,Blending in New Jersey,USA,New Jersey Resources Corp.,2021.0,,Operational,1%,"65 kg H2/day, 175-kW electrolyzer",,,,,,,Link,Link
+BLE-28,HyGrid - Long Island,USA,"National Grid, Town of Hempstead",2022.0,,Operational,5-20%,800 homes and 10 municipal vehicles,,,,,,,Link,
+BLE-29,"Therm H2 - Utah, Delta",USA,Dominion Energy,2023.0,,Decommisioned,5%,1800 customers,,,,,,,Link,Link
+BLE-30,Gastonia Hydrogen Blending project,USA,Dominion Energy,2024.0,,Under construction,5%,,,,,,,"$215,000",Link,Link
+BLE-31,Blending in Eugene,USA,"Northwest Natural Holding, Eugen Water & Electric Board, Bonneville Environmental Foundation",2024.0,,Cancelled,5-10%,"2300 residential, 160 commercial and 6 industrial customers",,,,,,,Link,Link
+BLE-34,Green H2 Blending pilot at Ahmedabad,IND,"Adani, Total Energies",2024.0,,Operational,"2,3%",4000 customers (residential and commercial),,,,,,,Link,Link
+BLE-35,"H2 blending at the University of California, Irvine (UCI) Anteater Recreation Center",USA,SoCalGas,2025.0,,Cancelled,5%-20%,,,,,,,,LInk,Link
+BLE-36,Orange Cove H2 blending demonstration project,USA,SoCalGas,2026.0,,Concept,0.1%-5%,10000 residents and commercial customers,,,,,,,Link,Link
+BLE-37,Hydrogen Island Öhringen,DEU,Netze BW,2022.0,2024.0,DEMO,30%,26 households/500 metres,,,,,,,Link,Link
+BLE-38,H2Pole,ESP,Reganosa Asset Investments,2030.0,,Feasibility study,5%,up to 2.000 kg/h,,,,2.5,90.0,,,
+BLE-39,Gas Networks Ireland hydrogen blending preperation,IRL,Gas Networks Ireland,2028.0,,Under construction,2%,Preparing the entire network to accept 2% hydrogen blends,80-200 GWh,,,,,,Link,
+BLE-40,"Electrolyzer with ""network related function"" Apulia - Phase 1",ITA,SNAM,2035.0,,Concept,2%,90 MW electrolyzer,90,,,3.0,75.0,,Link,
+BLE-41,"Electrolyzer with ""network related function"" Sicily - Phase 1",ITA,SNAM,2035.0,,Concept,2%,90 MW electrolyzer,90,,,3.0,75.0,,Link,
+BLE-42,Contursi Terme,ITA,SNAM,2019.0,,Operational,5-10%,2 industrial players,,,,,,,Link,
+BLE-43,H2 blending test at a compressor station designed for gas networks,ITA,"SNAM, Baker Hughes",2020.0,,Operational,10%,,,,,,,,Link,
+BLE-44,SmartSwitch,GRC,"DESFA SA, Bulfartransgaz EAD",,,Concept,10%,,,,,,,"EUR 318,7 million",,
+BLE-45,H2 cross border,AUT,"RAG Austria,bayernets, MEGGLE, Shell Energy Deutschland",2024.0,,Operational,2%,0.5 MW electrolyser,0.5,,,,,,Link,
+BLE-46,Electrolysis Puchkirchen,AUT,"RAG Austria, NetzOÖ et al.",2026.0,,Under construction,2%,12.5 MW electrolyser,12.5,,,,,,,

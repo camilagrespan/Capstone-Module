@@ -9,7 +9,7 @@ from streamlit_folium import st_folium
 
 # ── Page config ────────────────────────────────────────────────────────────────
 st.set_page_config(
-    page_title="GreenWatch – Threats to Tribal Lands",
+    page_title="H2 & Waste-to-Energy Projects Near Tribal Lands",
     page_icon="🛡️",
     layout="wide",
 )
@@ -98,7 +98,7 @@ with st.sidebar:
         st.info("← Click a project marker on the map to begin the Due Diligence evaluation.")
 
 # ── Main page ─────────────────────────────────────────────────────────────────
-st.title("🛡️ GreenWatch – Energy Project Threats to Tribal Lands")
+st.title("🛡️ H2 & Waste-to-Energy Projects Near Tribal Lands")
 st.markdown(
     "**Blue markers** = Hydrogen projects &nbsp;|&nbsp; "
     "**Orange markers** = Waste-to-Energy projects &nbsp;|&nbsp; "

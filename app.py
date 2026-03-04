@@ -150,8 +150,6 @@ if not df_filtered.empty:
 else:
     df_map = pd.DataFrame(columns=["Latitude", "Longitude"])
 
-st.dataframe(df_filtered, width="stretch", hide_index=True)
-
 # Calculate map center after filtering
 center_lat = df_map["Latitude"].mean() if len(df_map) else 39.5
 center_lon = df_map["Longitude"].mean() if len(df_map) else -98.35
@@ -302,3 +300,4 @@ if alert_count and "Near_Tribal_Land" in df.columns:
 # ── Data table ────────────────────────────────────────────────────────────────
 st.markdown("---")
 st.subheader("All Projects")
+st.dataframe(df_filtered, width="stretch", hide_index=True)

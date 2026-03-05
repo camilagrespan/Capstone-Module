@@ -100,11 +100,11 @@ with st.sidebar:
 # ── Main page ─────────────────────────────────────────────────────────────────
 st.markdown(
     """
-    <div style="background:rgba(255,180,80,0.35);color:#fff;text-align:center;
+    <div style="background:rgba(255,180,80,0.15);color:#fff;text-align:center;
                 padding:12px 16px;border-radius:6px;font-size:1.5rem;
                 font-weight:700;margin-bottom:12px;
-                border:1px solid rgba(255,160,50,0.5);">
-        🧹 🚧 Website Under Construction—Pardon Our Dust 🚧 🧹
+                border:1px solid rgba(255,160,50,0.3);">
+        🧹 🚧 Pardon Our Dust — Website Under Construction 🚧 🧹
     </div>
     """,
     unsafe_allow_html=True,

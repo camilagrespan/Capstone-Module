@@ -104,7 +104,7 @@ st.markdown(
                 padding:12px 16px;border-radius:6px;font-size:1.5rem;
                 font-weight:700;margin-bottom:12px;
                 border:1px solid rgba(255,160,50,0.5);">
-        🚧 Website Under Construction 🚧
+        🚧 Website Under Construction—Pardon Our Dust 🌫️🚧
     </div>
     """,
     unsafe_allow_html=True,

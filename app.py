@@ -98,6 +98,16 @@ with st.sidebar:
         st.info("← Click a project marker on the map to begin the Due Diligence evaluation.")
 
 # ── Main page ─────────────────────────────────────────────────────────────────
+st.markdown(
+    """
+    <div style="background:#f5a623;color:#000;text-align:center;
+                padding:10px 16px;border-radius:6px;font-size:1rem;
+                font-weight:600;margin-bottom:12px;">
+        🚧 Website Under Construction 🚧
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
 st.title("🛡️ H2 & Waste-to-Energy Projects Near Tribal Lands")
 st.markdown(
     "**Blue markers** = Hydrogen projects &nbsp;|&nbsp; "

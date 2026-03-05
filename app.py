@@ -100,9 +100,10 @@ with st.sidebar:
 # ── Main page ─────────────────────────────────────────────────────────────────
 st.markdown(
     """
-    <div style="background:#f5a623;color:#000;text-align:center;
-                padding:10px 16px;border-radius:6px;font-size:1rem;
-                font-weight:600;margin-bottom:12px;">
+    <div style="background:rgba(255,180,80,0.35);color:#7a4500;text-align:center;
+                padding:12px 16px;border-radius:6px;font-size:1.2rem;
+                font-weight:700;margin-bottom:12px;
+                border:1px solid rgba(255,160,50,0.5);">
         🚧 Website Under Construction 🚧
     </div>
     """,

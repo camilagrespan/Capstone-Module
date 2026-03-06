@@ -335,7 +335,7 @@
 <!-- ═══════════════════════════ SCRIPT ════════════════════════════ -->
 <script>
 // ── State ────────────────────────────────────────────────────────────────────
-let allRows = [];        // full dataset from all_threats.csv
+let allRows = [];        // full dataset from all_projects.csv
 let leafletMap = null;
 let markerLayerGroup = null;
 
@@ -595,7 +595,7 @@ async function bootstrap() {
   initMap();
   await loadTribalBoundaries();
 
-  Papa.parse("all_threats.csv", {
+  Papa.parse("all_projects.csv", {
     download: true,
     header: true,
     skipEmptyLines: true,
@@ -605,7 +605,7 @@ async function bootstrap() {
       renderMarkers();
     },
     error(err) {
-      alert("Could not load all_threats.csv. Run build_all_threats.py first.\n\n" + err.message);
+      alert("Could not load all_projects.csv. Run build_all_projects.py first.\n\n" + err.message);
     },
   });
 

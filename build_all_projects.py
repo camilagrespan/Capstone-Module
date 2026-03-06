@@ -1,15 +1,15 @@
 """
-build_all_threats.py
+build_all_projects.py
 --------------------
 Loads five energy project CSV files, standardises them to:
     Project_Name | Developer | Technology | Latitude | Longitude
 Filters to Hydrogen and Waste-to-Energy projects in the United States,
-and saves the combined result as all_threats.csv.
+and saves the combined result as all_projects.csv.
 """
 
 import pandas as pd
 
-OUT_FILE = "all_threats.csv"
+OUT_FILE = "all_projects.csv"
 
 # ── Helpers ────────────────────────────────────────────────────────────────────
 STANDARD_COLS = ["Project_Name", "Developer", "Technology", "Latitude", "Longitude"]

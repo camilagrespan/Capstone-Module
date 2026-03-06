@@ -118,7 +118,7 @@ st.markdown(
     "Click a marker to open the Due Diligence checklist in the sidebar."
 )
 
-# ── Load all_threats.csv ───────────────────────────────────────────────────────
+# ── Load all_projects.csv ───────────────────────────────────────────────────────
 @st.cache_data
 def load_threats(path: str) -> pd.DataFrame:
     return pd.read_csv(path)

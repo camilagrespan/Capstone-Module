@@ -94,9 +94,9 @@ def label_dataframe(df: pd.DataFrame) -> pd.DataFrame:
 if __name__ == "__main__":
     import os
 
-    csv_path = "all_threats.csv"
+    csv_path = "all_projects.csv"
     if not os.path.exists(csv_path):
-        print(f"ERROR: {csv_path} not found. Run build_all_threats.py first.")
+        print(f"ERROR: {csv_path} not found. Run build_all_projects.py first.")
         raise SystemExit(1)
 
     df = pd.read_csv(csv_path)
@@ -111,6 +111,6 @@ if __name__ == "__main__":
         cols.insert(2, "Energy_Source")
     print(df[cols].head(20).to_string(index=False))
 
-    out_path = "all_threats_labeled.csv"
+    out_path = "all_projects_labeled.csv"
     df.to_csv(out_path, index=False)
     print(f"\nLabeled data saved to {out_path}")

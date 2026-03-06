@@ -1,14 +1,14 @@
 """
 flag_near_tribal.py
 -------------------
-Uses geopandas to flag any project in all_threats.csv that falls within
+Uses geopandas to flag any project in all_projects.csv that falls within
 50 miles (~80,467 m) of a federally recognised Tribal reservation boundary.
 
-Adds two columns to all_threats.csv:
+Adds two columns to all_projects.csv:
   Near_Tribal_Land  – True / False
   Nearest_Tribe     – name of the closest tribal area (or empty string)
 
-Run this after build_all_threats.py whenever either input file changes.
+Run this after build_all_projects.py whenever either input file changes.
 """
 
 import json
@@ -28,8 +28,8 @@ tribes_proj = tribes.to_crs(CRS_MEASURE)
 
 print(f"  {len(tribes_proj)} tribal boundary polygons loaded.")
 
-print("Loading all_threats.csv…")
-df = pd.read_csv("all_threats.csv")
+print("Loading all_projects.csv…")
+df = pd.read_csv("all_projects.csv")
 
 # Only projects with coordinates can be spatially tested
 has_coords = df["Latitude"].notna() & df["Longitude"].notna()
@@ -85,10 +85,10 @@ if not flagged.empty:
 
 # ── Combine and save ───────────────────────────────────────────────────────────
 combined = pd.concat([df_geo, df_none], ignore_index=True)
-combined.to_csv("all_threats.csv", index=False)
+combined.to_csv("all_projects.csv", index=False)
 
 flagged_count = combined["Near_Tribal_Land"].sum()
-print(f"\n✓ Saved all_threats.csv  ({len(combined):,} total projects)")
+print(f"\n✓ Saved all_projects.csv  ({len(combined):,} total projects)")
 print(f"  🚨 {flagged_count} projects flagged within 50 miles of a Tribal boundary")
 print(f"  ✓  {len(combined) - flagged_count} projects outside the 50-mile zone")
 

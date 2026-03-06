@@ -1,5 +1,6 @@
 import json
 import os
+import requests
 from typing import Optional
 
 import folium
@@ -312,3 +313,110 @@ if alert_count and "Near_Tribal_Land" in df.columns:
 st.markdown("---")
 st.subheader("All Projects")
 st.dataframe(df_filtered, width="stretch", hide_index=True)
+
+# ── Drought Vulnerability Maps ─────────────────────────────────────────────────
+st.markdown("---")
+st.subheader("🌵 Drought Vulnerability Maps")
+st.caption(
+    "Current US drought conditions from the US Drought Monitor (USDM), "
+    "updated weekly. Colors show drought severity: "
+    "D0 Abnormally Dry → D4 Exceptional Drought."
+)
+
+# USDM official drought category colours and labels
+_USDM_COLORS = {0: "#FFFF00", 1: "#FCD37F", 2: "#FFAA00", 3: "#E60000", 4: "#730000"}
+_USDM_LABELS = {
+    0: "D0 – Abnormally Dry",
+    1: "D1 – Moderate Drought",
+    2: "D2 – Severe Drought",
+    3: "D3 – Extreme Drought",
+    4: "D4 – Exceptional Drought",
+}
+
+@st.cache_data(show_spinner="Loading drought data…")
+def load_usdm_geojson() -> Optional[dict]:
+    if not os.path.exists("usdm_drought.geojson"):
+        return None
+    with open("usdm_drought.geojson", "r") as f:
+        return json.load(f)
+
+tab_usdm, tab_fema = st.tabs(["🌧️ US Drought Monitor", "📊 FEMA National Risk Index"])
+
+with tab_usdm:
+    usdm_geojson = load_usdm_geojson()
+    if usdm_geojson is None:
+        st.warning(
+            "⚠️ `usdm_drought.geojson` not found. "
+            "Run `python download_drought_data.py` to generate it."
+        )
+    else:
+        # Read map date from first feature if available
+        try:
+            map_date = usdm_geojson["features"][0]["properties"].get("map_date", "latest")
+        except (KeyError, IndexError):
+            map_date = "latest"
+
+        m_usdm = folium.Map(location=[39.5, -98.35], zoom_start=4, tiles="CartoDB positron")
+
+        def _usdm_style(feature):
+            dm = int(feature["properties"].get("dm_category", 0))
+            return {
+                "fillColor": _USDM_COLORS.get(dm, "#FFFFFF"),
+                "color": "#555555",
+                "weight": 0.5,
+                "fillOpacity": 0.75,
+            }
+
+        folium.GeoJson(
+            usdm_geojson,
+            name="USDM Drought",
+            style_function=_usdm_style,
+            tooltip=folium.GeoJsonTooltip(
+                fields=["dm_label"],
+                aliases=["Drought Category:"],
+                localize=True,
+            ),
+        ).add_to(m_usdm)
+
+        # Add a manual legend as HTML
+        legend_html = """
+        <div style="position:fixed;bottom:30px;left:30px;z-index:9999;
+                    background:white;padding:10px 14px;border-radius:8px;
+                    border:1px solid #ccc;font-size:13px;line-height:1.8;">
+          <b>Drought Category</b><br>
+          <span style="background:#FFFF00;padding:2px 10px;margin-right:6px;">&nbsp;</span>D0 – Abnormally Dry<br>
+          <span style="background:#FCD37F;padding:2px 10px;margin-right:6px;">&nbsp;</span>D1 – Moderate<br>
+          <span style="background:#FFAA00;padding:2px 10px;margin-right:6px;">&nbsp;</span>D2 – Severe<br>
+          <span style="background:#E60000;padding:2px 10px;margin-right:6px;">&nbsp;</span>D3 – Extreme<br>
+          <span style="background:#730000;padding:2px 10px;margin-right:6px;">&nbsp;</span>D4 – Exceptional
+        </div>
+        """
+        m_usdm.get_root().html.add_child(folium.Element(legend_html))
+
+        st.caption(f"Data as of: **{map_date}** | Source: US Drought Monitor / University of Nebraska–Lincoln")
+        st_folium(m_usdm, use_container_width=True, height=520, returned_objects=[])
+
+with tab_fema:
+    st.markdown("""
+    ### FEMA National Risk Index — Drought Hazard
+
+    The **FEMA National Risk Index (NRI)** scores every US county on drought hazard,
+    combining expected annual loss, social vulnerability, and community resilience.
+
+    The NRI drought hazard layer is not available via a public API; access it directly
+    from FEMA's interactive map:
+
+    🔗 **[Open FEMA NRI Interactive Map](https://hazards.fema.gov/nri/map)**
+
+    On that map:
+    - Select **Drought** from the hazard dropdown
+    - Use the county detail panel to see Risk Score, Expected Annual Loss, and Social Vulnerability rating
+    - Data is updated annually; current version is NRI November 2023
+    """)
+    st.info(
+        "Tip: Cross-reference the USDM current drought conditions (left tab) "
+        "with the FEMA NRI long-term drought risk scores to identify tribal communities "
+        "facing both acute and chronic water stress.",
+        icon="💡",
+    )
+

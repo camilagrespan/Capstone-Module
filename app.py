@@ -124,9 +124,9 @@ def load_threats(path: str) -> pd.DataFrame:
     return pd.read_csv(path)
 
 try:
-    df = load_threats("all_threats.csv")
+    df = load_threats("all_projects.csv")
 except FileNotFoundError:
-    st.error("all_threats.csv not found. Run build_all_threats.py first.")
+    st.error("all_projects.csv not found. Run build_all_projects.py first.")
     st.stop()
 
 

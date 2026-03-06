@@ -318,9 +318,8 @@ st.dataframe(df_filtered, width="stretch", hide_index=True)
 st.markdown("---")
 st.subheader("🌵 Drought Vulnerability Maps")
 st.caption(
-    "Current US drought conditions from the US Drought Monitor (USDM), "
-    "updated weekly. Colors show drought severity: "
-    "D0 Abnormally Dry → D4 Exceptional Drought."
+    "**Left tab:** Current weekly drought conditions (US Drought Monitor). "
+    "**Right tab:** Long-term county drought risk scores (FEMA National Risk Index, December 2025)."
 )
 
 # USDM official drought category colours and labels
@@ -333,12 +332,38 @@ _USDM_LABELS = {
     4: "D4 – Exceptional Drought",
 }
 
+COUNTIES_GEOJSON_URL = (
+    "https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json"
+)
+
 @st.cache_data(show_spinner="Loading drought data…")
 def load_usdm_geojson() -> Optional[dict]:
     if not os.path.exists("usdm_drought.geojson"):
         return None
     with open("usdm_drought.geojson", "r") as f:
         return json.load(f)
+
+@st.cache_data(show_spinner="Loading NRI county data…")
+def load_fema_nri() -> Optional[pd.DataFrame]:
+    path = os.path.join("NRI_Table_Counties", "NRI_Table_Counties.csv")
+    if not os.path.exists(path):
+        return None
+    df = pd.read_csv(path, dtype={"STCOFIPS": str},
+                     usecols=["STCOFIPS", "STATE", "COUNTY", "DRGT_RISKS", "DRGT_RISKR",
+                               "DRGT_EXPT", "DRGT_EVNTS", "DRGT_HLRR"])
+    df["STCOFIPS"] = df["STCOFIPS"].str.zfill(5)
+    df["DRGT_RISKS"] = pd.to_numeric(df["DRGT_RISKS"], errors="coerce")
+    return df
+
+@st.cache_data(show_spinner="Loading county boundaries…")
+def load_counties_geojson() -> Optional[dict]:
+    try:
+        resp = requests.get(COUNTIES_GEOJSON_URL, timeout=30)
+        resp.raise_for_status()
+        return resp.json()
+    except Exception as e:
+        st.warning(f"Could not load county boundaries: {e}")
+        return None
 
 tab_usdm, tab_fema = st.tabs(["🌧️ US Drought Monitor", "📊 FEMA National Risk Index"])
 
@@ -350,7 +375,6 @@ with tab_usdm:
             "Run `python download_drought_data.py` to generate it."
         )
     else:
-        # Read map date from first feature if available
         try:
             map_date = usdm_geojson["features"][0]["properties"].get("map_date", "latest")
         except (KeyError, IndexError):
@@ -378,7 +402,6 @@ with tab_usdm:
             ),
         ).add_to(m_usdm)
 
-        # Add a manual legend as HTML
         legend_html = """
         <div style="position:fixed;bottom:30px;left:30px;z-index:9999;
                     background:white;padding:10px 14px;border-radius:8px;
@@ -397,26 +420,56 @@ with tab_usdm:
         st_folium(m_usdm, use_container_width=True, height=520, returned_objects=[])
 
 with tab_fema:
-    st.markdown("""
-    ### FEMA National Risk Index — Drought Hazard
+    fema_df = load_fema_nri()
+    if fema_df is None:
+        st.warning("⚠️ `NRI_Table_Counties/NRI_Table_Counties.csv` not found.")
+    else:
+        counties_geojson = load_counties_geojson()
+        if counties_geojson:
+            m_fema = folium.Map(location=[39.5, -98.35], zoom_start=4, tiles="CartoDB positron")
 
-    The **FEMA National Risk Index (NRI)** scores every US county on drought hazard,
-    combining expected annual loss, social vulnerability, and community resilience.
+            folium.Choropleth(
+                geo_data=counties_geojson,
+                data=fema_df,
+                columns=["STCOFIPS", "DRGT_RISKS"],
+                key_on="feature.id",
+                fill_color="YlOrRd",
+                fill_opacity=0.75,
+                line_opacity=0.1,
+                nan_fill_color="#f0f0f0",
+                legend_name="FEMA NRI Drought Risk Score (0–100)",
+            ).add_to(m_fema)
 
-    The NRI drought hazard layer is not available via a public API; access it directly
-    from FEMA's interactive map:
+            # Tooltip layer: merge NRI data into geojson features for hover info
+            fema_lookup = fema_df.set_index("STCOFIPS")[
+                ["STATE", "COUNTY", "DRGT_RISKS", "DRGT_RISKR", "DRGT_EVNTS", "DRGT_HLRR"]
+            ].to_dict("index")
 
-    🔗 **[Open FEMA NRI Interactive Map](https://hazards.fema.gov/nri/map)**
+            folium.GeoJson(
+                data={
+                    "type": "FeatureCollection",
+                    "features": [
+                        {**feat, "properties": {
+                            **feat.get("properties", {}),
+                            **fema_lookup.get(feat.get("id", ""), {})
+                        }}
+                        for feat in counties_geojson["features"]
+                    ]
+                },
+                style_function=lambda f: {"fillOpacity": 0, "weight": 0},
+                tooltip=folium.GeoJsonTooltip(
+                    fields=["COUNTY", "STATE", "DRGT_RISKS", "DRGT_RISKR", "DRGT_EVNTS", "DRGT_HLRR"],
+                    aliases=["County:", "State:", "Risk Score:", "Rating:", "Avg Events/Year:", "Social Vulnerability:"],
+                    localize=True,
+                    sticky=True,
+                ),
+                name="NRI Hover",
+            ).add_to(m_fema)
 
-    On that map:
-    - Select **Drought** from the hazard dropdown
-    - Use the county detail panel to see Risk Score, Expected Annual Loss, and Social Vulnerability rating
-    - Data is updated annually; current version is NRI November 2023
-    """)
-    st.info(
-        "Tip: Cross-reference the USDM current drought conditions (left tab) "
-        "with the FEMA NRI long-term drought risk scores to identify tribal communities "
-        "facing both acute and chronic water stress.",
-        icon="💡",
-    )
+            st.caption(
+                "Source: **FEMA National Risk Index** (December 2025). "
+                "Risk Score 0–100: higher = greater long-term drought risk. "
+                "Hover over a county for details."
+            )
+            st_folium(m_fema, use_container_width=True, height=520, returned_objects=[])
 

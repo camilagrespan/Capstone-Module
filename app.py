@@ -399,13 +399,14 @@ with tab_usdm:
                 fields=["dm_label"],
                 aliases=["Drought Category:"],
                 localize=True,
+                style="background-color: white; color: black; font-family: Arial; font-size: 12px;",
             ),
         ).add_to(m_usdm)
 
         legend_html = """
         <div style="position:fixed;bottom:30px;left:30px;z-index:9999;
                     background:white;padding:10px 14px;border-radius:8px;
-                    border:1px solid #ccc;font-size:13px;line-height:1.8;">
+                    border:1px solid #ccc;color:#000;font-size:13px;line-height:1.8;">
           <b>Drought Category</b><br>
           <span style="background:#FFFF00;padding:2px 10px;margin-right:6px;">&nbsp;</span>D0 – Abnormally Dry<br>
           <span style="background:#FCD37F;padding:2px 10px;margin-right:6px;">&nbsp;</span>D1 – Moderate<br>
@@ -439,6 +440,14 @@ with tab_fema:
                 nan_fill_color="#f0f0f0",
                 legend_name="FEMA NRI Drought Risk Score (0–100)",
             ).add_to(m_fema)
+
+            # Streamlit themes can inherit white text; keep the legend readable.
+            m_fema.get_root().header.add_child(folium.Element("""
+                <style>
+                  .legend, .legend text, .legend label { color: #000 !important; fill: #000 !important; }
+                  .legend i { border: 1px solid #777; }
+                </style>
+            """))
 
             # Tooltip layer: merge NRI data into geojson features for hover info
             fema_lookup = fema_df.set_index("STCOFIPS")[

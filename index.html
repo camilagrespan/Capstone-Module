@@ -186,6 +186,21 @@
     #table-section { margin-bottom: 16px; }
     #table-section h3 { font-size: 1rem; font-weight: 600; margin-bottom: 8px; }
 
+    /* Drought maps */
+    #drought-section { margin: 18px 0 24px; }
+    #drought-section h3 { font-size: 1rem; font-weight: 600; margin-bottom: 6px; }
+    .drought-caption { color: #555; font-size: 0.82rem; margin-bottom: 9px; }
+    .drought-tabs { display: flex; gap: 6px; margin-bottom: 8px; }
+    .drought-tab {
+      border: 1px solid #cbd2df; border-radius: 6px; background: #f7f8fb;
+      padding: 8px 12px; cursor: pointer; font-size: 0.82rem;
+    }
+    .drought-tab.active { background: #1a3a8f; color: white; border-color: #1a3a8f; }
+    .drought-pane { display: none; }
+    .drought-pane.active { display: block; }
+    .drought-map { height: 480px; border: 1px solid #ccc; border-radius: 8px; overflow: hidden; }
+    .drought-source { color: #666; font-size: 0.75rem; margin-top: 6px; }
+
     table {
       width: 100%;
       border-collapse: collapse;
@@ -329,6 +344,27 @@
         <tbody id="main-tbody"></tbody>
       </table>
     </div>
+
+    <!-- Static drought vulnerability maps -->
+    <section id="drought-section">
+      <hr style="border:none;border-top:1px solid #dde;margin:4px 0 10px" />
+      <h3>🌵 Drought Vulnerability Maps</h3>
+      <p class="drought-caption">
+        Current US Drought Monitor conditions and long-term FEMA National Risk Index county drought risk.
+      </p>
+      <div class="drought-tabs" role="tablist">
+        <button class="drought-tab active" data-pane="usdm-pane">🌧️ US Drought Monitor</button>
+        <button class="drought-tab" data-pane="fema-pane">📊 FEMA National Risk Index</button>
+      </div>
+      <div id="usdm-pane" class="drought-pane active">
+        <div id="usdm-map" class="drought-map"></div>
+        <div class="drought-source">Source: US Drought Monitor / University of Nebraska–Lincoln. Data date: 2026-03-03.</div>
+      </div>
+      <div id="fema-pane" class="drought-pane">
+        <div id="fema-map" class="drought-map"></div>
+        <div class="drought-source">Source: FEMA National Risk Index, December 2025. Higher scores indicate greater long-term drought risk.</div>
+      </div>
+    </section>
   </div>
 </main>
 
@@ -338,6 +374,108 @@
 let allRows = [];        // full dataset from all_projects.csv
 let leafletMap = null;
 let markerLayerGroup = null;
+let usdmMap = null;
+let femaMap = null;
+let countyGeoJSON = null;
+
+const USDM_COLORS = { 0: "#FFFF00", 1: "#FCD37F", 2: "#FFAA00", 3: "#E60000", 4: "#730000" };
+const USDM_LABELS = {
+  0: "D0 – Abnormally Dry", 1: "D1 – Moderate Drought", 2: "D2 – Severe Drought",
+  3: "D3 – Extreme Drought", 4: "D4 – Exceptional Drought",
+};
+
+function droughtBaseMap(elementId) {
+  const map = L.map(elementId, { center: [39.5, -98.35], zoom: 4 });
+  L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
+    attribution: '&copy; <a href="https://carto.com/">CARTO</a>',
+    subdomains: "abcd", maxZoom: 19,
+  }).addTo(map);
+  return map;
+}
+
+async function loadUSDMMap() {
+  if (usdmMap) return;
+  usdmMap = droughtBaseMap("usdm-map");
+  try {
+    const response = await fetch("usdm_drought.geojson");
+    if (!response.ok) throw new Error("USDM GeoJSON could not be loaded");
+    const data = await response.json();
+    L.geoJSON(data, {
+      style: feature => {
+        const category = Number(feature.properties.dm_category);
+        return { fillColor: USDM_COLORS[category] || "#fff", color: "#555", weight: 0.5, fillOpacity: 0.75 };
+      },
+      onEachFeature: (feature, layer) => layer.bindTooltip(feature.properties.dm_label || "Drought area", { sticky: true }),
+    }).addTo(usdmMap);
+    const legend = L.control({ position: "bottomright" });
+    legend.onAdd = () => {
+      const div = L.DomUtil.create("div", "map-legend");
+      div.innerHTML = "<b>Drought Category</b>" + Object.entries(USDM_LABELS).map(([key, label]) =>
+        `<span style="background:${USDM_COLORS[key]};padding:2px 10px;margin-right:6px;">&nbsp;</span>${label}<br>`
+      ).join("");
+      return div;
+    };
+    legend.addTo(usdmMap);
+  } catch (error) {
+    document.getElementById("usdm-map").textContent = `Unable to load USDM data: ${error.message}`;
+  }
+}
+
+async function loadFEMAMap() {
+  if (femaMap) return;
+  femaMap = droughtBaseMap("fema-map");
+  try {
+    const [boundaryResponse, csvResponse] = await Promise.all([
+      fetch("https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json"),
+      fetch("NRI_Table_Counties/NRI_Table_Counties.csv"),
+    ]);
+    if (!boundaryResponse.ok || !csvResponse.ok) throw new Error("FEMA boundary or CSV data could not be loaded");
+    countyGeoJSON = await boundaryResponse.json();
+    const csvText = await csvResponse.text();
+    const rows = Papa.parse(csvText, { header: true, skipEmptyLines: true }).data;
+    const riskByFips = {};
+    rows.forEach(row => {
+      const fips = String(row.STCOFIPS || "").replace(/\.0$/, "").padStart(5, "0");
+      if (fips) riskByFips[fips] = row;
+    });
+    const values = rows.map(row => Number(row.DRGT_RISKS)).filter(Number.isFinite);
+    const minRisk = Math.min(...values), maxRisk = Math.max(...values);
+    const riskColor = value => {
+      const ratio = Math.max(0, Math.min(1, (value - minRisk) / (maxRisk - minRisk || 1)));
+      const hue = 55 - ratio * 55;
+      return `hsl(${hue}, 90%, 52%)`;
+    };
+    L.geoJSON(countyGeoJSON, {
+      style: feature => {
+        const row = riskByFips[String(feature.id).padStart(5, "0")];
+        const score = row ? Number(row.DRGT_RISKS) : NaN;
+        return { fillColor: Number.isFinite(score) ? riskColor(score) : "#eeeeee", color: "#999", weight: 0.25, fillOpacity: 0.72 };
+      },
+      onEachFeature: (feature, layer) => {
+        const row = riskByFips[String(feature.id).padStart(5, "0")];
+        if (!row) return;
+        layer.bindTooltip(`<b>${row.COUNTY}, ${row.STATE}</b><br>Risk score: ${Number(row.DRGT_RISKS).toFixed(1)}<br>Rating: ${row.DRGT_RISKR}<br>Avg. events/year: ${row.DRGT_EVNTS}<br>Social vulnerability: ${row.DRGT_HLRR}`, { sticky: true });
+      },
+    }).addTo(femaMap);
+  } catch (error) {
+    document.getElementById("fema-map").textContent = `Unable to load FEMA data: ${error.message}`;
+  }
+}
+
+function initDroughtTabs() {
+  loadUSDMMap();
+  document.querySelectorAll(".drought-tab").forEach(button => button.addEventListener("click", () => {
+    document.querySelectorAll(".drought-tab").forEach(tab => tab.classList.remove("active"));
+    document.querySelectorAll(".drought-pane").forEach(pane => pane.classList.remove("active"));
+    button.classList.add("active");
+    document.getElementById(button.dataset.pane).classList.add("active");
+    if (button.dataset.pane === "usdm-pane") {
+      loadUSDMMap().then(() => usdmMap.invalidateSize());
+    } else {
+      loadFEMAMap().then(() => femaMap.invalidateSize());
+    }
+  }));
+}
 
 // ── Initialise Leaflet map ───────────────────────────────────────────────────
 function initMap() {
@@ -594,6 +732,7 @@ function parseBool(val) {
 async function bootstrap() {
   initMap();
   await loadTribalBoundaries();
+  initDroughtTabs();
 
   Papa.parse("all_projects.csv", {
     download: true,

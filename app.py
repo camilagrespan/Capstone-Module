@@ -170,7 +170,7 @@ center_lon = df_map["Longitude"].mean() if len(df_map) else -98.35
 m = folium.Map(
     location=[center_lat, center_lon],
     zoom_start=4,
-    tiles="CartoDB positron",
+    tiles="OpenStreetMap",
 )
 
 # Tribal boundary layer
@@ -380,7 +380,7 @@ with tab_usdm:
         except (KeyError, IndexError):
             map_date = "latest"
 
-        m_usdm = folium.Map(location=[39.5, -98.35], zoom_start=4, tiles="CartoDB positron")
+        m_usdm = folium.Map(location=[39.5, -98.35], zoom_start=4, tiles="OpenStreetMap")
 
         def _usdm_style(feature):
             dm = int(feature["properties"].get("dm_category", 0))
@@ -426,7 +426,7 @@ with tab_fema:
     else:
         counties_geojson = load_counties_geojson()
         if counties_geojson:
-            m_fema = folium.Map(location=[39.5, -98.35], zoom_start=4, tiles="CartoDB positron")
+            m_fema = folium.Map(location=[39.5, -98.35], zoom_start=4, tiles="OpenStreetMap")
 
             folium.Choropleth(
                 geo_data=counties_geojson,
